@@ -198,15 +198,15 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="botName" max="32767" attributes="0"/>
-                              <Component id="botEmail" max="32767" attributes="0"/>
-                              <Component id="botPassword" pref="80" max="32767" attributes="0"/>
-                              <Component id="steamLogin" max="32767" attributes="0"/>
-                              <Component id="steamPassword" max="32767" attributes="0"/>
-                              <Component id="steamApiKey" max="32767" attributes="0"/>
-                              <Component id="sharedSecret" max="32767" attributes="0"/>
-                              <Component id="identitySecret" max="32767" attributes="0"/>
-                              <Component id="deviceId" max="32767" attributes="0"/>
+                              <Component id="botEmail" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="botPassword" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="steamLogin" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="steamPassword" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="steamApiKey" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="sharedSecret" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="identitySecret" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="deviceId" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="botName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>

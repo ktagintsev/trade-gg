@@ -347,15 +347,15 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botName)
-                    .addComponent(botEmail)
-                    .addComponent(botPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                    .addComponent(steamLogin)
-                    .addComponent(steamPassword)
-                    .addComponent(steamApiKey)
-                    .addComponent(sharedSecret)
-                    .addComponent(identitySecret)
-                    .addComponent(deviceId))
+                    .addComponent(botEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(steamLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(steamPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(steamApiKey, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sharedSecret, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(identitySecret, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deviceId, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1158,9 +1158,9 @@ public class Main extends javax.swing.JFrame {
                     driver.get("https://tradeit.gg/");
 
                     WebDriverWait wait = new WebDriverWait(driver, 20);
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("signin")));
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("steamlogin")));
 
-                    WebElement signin = driver.findElement(By.className("signin"));
+                    WebElement signin = driver.findElement(By.className("steamlogin"));
                     signin.click();
 
                     wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("steamAccountName")));
