@@ -63,7 +63,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="ROBT PRO 5.7"/>
+    <Property name="title" type="java.lang.String" value="ROBT GG 1.0"/>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="Default Cursor"/>
     </Property>
@@ -183,57 +183,32 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabel68" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel67" alignment="0" pref="97" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="steamApiKey" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <Component id="sharedSecret" min="-2" pref="80" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabel70" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel69" alignment="0" pref="97" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="identitySecret" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <Component id="deviceId" min="-2" pref="80" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabel24" pref="97" max="32767" attributes="0"/>
-                                      <Component id="jLabel36" max="32767" attributes="0"/>
-                                      <Component id="jLabel20" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="botPassword" pref="80" max="32767" attributes="0"/>
-                                      <Component id="botEmail" max="32767" attributes="0"/>
-                                      <Component id="botName" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabel65" alignment="0" pref="97" max="32767" attributes="0"/>
-                                      <Component id="jLabel60" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="steamLogin" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <Component id="steamPassword" min="-2" pref="80" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel70" max="32767" attributes="0"/>
+                              <Component id="jLabel69" pref="100" max="32767" attributes="0"/>
+                              <Component id="jLabel68" max="32767" attributes="0"/>
+                              <Component id="jLabel67" max="32767" attributes="0"/>
+                              <Component id="jLabel65" max="32767" attributes="0"/>
+                              <Component id="jLabel60" max="32767" attributes="0"/>
+                              <Component id="jLabel36" max="32767" attributes="0"/>
+                              <Component id="jLabel24" max="32767" attributes="0"/>
+                              <Component id="jLabel20" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="27" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="botName" max="32767" attributes="0"/>
+                              <Component id="botEmail" max="32767" attributes="0"/>
+                              <Component id="botPassword" pref="80" max="32767" attributes="0"/>
+                              <Component id="steamLogin" max="32767" attributes="0"/>
+                              <Component id="steamPassword" max="32767" attributes="0"/>
+                              <Component id="steamApiKey" max="32767" attributes="0"/>
+                              <Component id="sharedSecret" max="32767" attributes="0"/>
+                              <Component id="identitySecret" max="32767" attributes="0"/>
+                              <Component id="deviceId" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -285,7 +260,7 @@
                               <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="deviceId" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="25" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -314,6 +289,13 @@
                     <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;Email &#x443;&#x43a;&#x430;&#x437;&#x430;&#x43d;&#x43d;&#x44b;&#x439; &#x43f;&#x440;&#x438; &#x440;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x446;&#x438;&#x438; &#x43d;&#x430; &#x441;&#x430;&#x439;&#x442;&#x435;, &lt;br&gt; &#x433;&#x434;&#x435; &#x432;&#x44b; &#x43f;&#x43e;&#x43a;&#x443;&#x43f;&#x430;&#x43b;&#x438; &#x43b;&#x438;&#x446;&#x435;&#x43d;&#x437;&#x438;&#x44e; &#x431;&#x43e;&#x442;&#x430;.&lt;br&gt;&#xa;&#x414;&#x43b;&#x44f; &#x43f;&#x43e;&#x43b;&#x443;&#x447;&#x435;&#x43d;&#x438;&#x44f; &#x443;&#x432;&#x435;&#x434;&#x43e;&#x43c;&#x43b;&#x435;&#x43d;&#x438;&#x439; &#x43e; &#x201c;&#x421;&#x442;&#x430;&#x442;&#x443;&#x441;&#x435;&#x201d; &#x431;&#x43e;&#x442; &#x43f;&#x440;&#x43e;&#x433;&#x440;&#x430;&#x43c;&#x43c;&#x44b;.&lt;/html&gt;"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JTextField" name="botEmail">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel36">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -321,13 +303,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="ROBT pass:"/>
                     <Property name="toolTipText" type="java.lang.String" value="&#x41f;&#x430;&#x440;&#x43e;&#x43b;&#x44c; &#x432;&#x44b;&#x434;&#x430;&#x43d;&#x43d;&#x44b;&#x439; &#x43d;&#x430; &#x441;&#x430;&#x439;&#x442;&#x435;, &#x433;&#x434;&#x435; &#x432;&#x44b; &#x43a;&#x443;&#x43f;&#x438;&#x43b;&#x438; &#x43b;&#x438;&#x446;&#x435;&#x43d;&#x437;&#x438;&#x44e; &#x431;&#x43e;&#x442;&#x430;"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="botEmail">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="botPassword">
@@ -444,6 +419,10 @@
                                   <EmptySpace pref="59" max="32767" attributes="0"/>
                                   <Component id="isAutoStart" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="login" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -464,6 +443,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="startROBT" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="login" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -529,6 +510,14 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="isAutoStart">
                 </Component>
+                <Component class="javax.swing.JButton" name="login">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Login"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel7">
@@ -561,7 +550,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="statusSteamMobile" pref="159" max="32767" attributes="0"/>
+                                  <Component id="statusSteamMobile" pref="155" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -701,7 +690,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="twoFaCode" alignment="1" max="32767" attributes="0"/>
+                              <Component id="twoFaCode" alignment="1" pref="202" max="32767" attributes="0"/>
                               <Component id="generate2faCode" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -715,7 +704,7 @@
                           <Component id="twoFaCode" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="generate2faCode" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
