@@ -121,7 +121,7 @@ public class Main extends javax.swing.JFrame {
         loadSettings(true);
         statusLabel.setForeground(Color.red);
 
-        if (isAutoStart.isSelected() && !"Отключено!".equals(statusLabel.getText())) {
+        if (isAutoStart.isSelected() && !"Off!".equals(statusLabel.getText())) {
             autoStartProgram();
         }
 
@@ -191,13 +191,6 @@ public class Main extends javax.swing.JFrame {
         loadSettings = new javax.swing.JButton();
         uploadSettings = new javax.swing.JButton();
         startROBT = new javax.swing.JButton();
-        jLabel99 = new javax.swing.JLabel();
-        isLoadImage = new javax.swing.JCheckBox();
-        isAllConfirm = new javax.swing.JCheckBox();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel201 = new javax.swing.JLabel();
-        updateSteamAuthInterval = new javax.swing.JTextField();
-        jLabel202 = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
         isAutoStart = new javax.swing.JCheckBox();
         jPanel7 = new javax.swing.JPanel();
@@ -211,7 +204,6 @@ public class Main extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         twoFaCode = new javax.swing.JTextField();
         generate2faCode = new javax.swing.JButton();
-        allConfirm = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         starTable = new javax.swing.JTable();
@@ -273,7 +265,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray));
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Подключение"));
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Connection"));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
         jLabel20.setText("Name:");
@@ -368,7 +360,7 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(steamLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(steamPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,7 +404,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Настройки"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Settings"));
 
         loadSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/load.png"))); // NOI18N
         loadSettings.setToolTipText("Загрузить настройки");
@@ -440,34 +432,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jLabel99.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
-        jLabel99.setText("Загружать картинки:");
-        jLabel99.setToolTipText("<html>Если активировано, программа будет загружать картинки для предметов. <br>\nДля загрузки картинок требуется время, поэтому если вам нужно быстро загрузить <br>\nбольшой объем данных в программу - снимите флажок.");
-        jLabel99.setMaximumSize(new java.awt.Dimension(156, 23));
-        jLabel99.setMinimumSize(new java.awt.Dimension(156, 23));
-        jLabel99.setPreferredSize(new java.awt.Dimension(156, 23));
-
-        isLoadImage.setSelected(true);
-
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
-        jLabel41.setText("<html>Подтверждать все<br>предложения обмена:");
-        jLabel41.setToolTipText("<html>По умолчанию программа подтверждает обмены только от маркета. <br>\nНо если вам нужно подтверждать предложения обмена не от маркета - активируйте флажок.");
-
-        jLabel201.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
-        jLabel201.setText("<html>Обновлять авторизацию <br>Steam каждые N минут:");
-        jLabel201.setToolTipText("<html>Авторизация в Steam необходима для приема/передачи предметов. <br>Программа через N минут будет авторизовываться в Steam и сохранять сессию<br> авторизации для приема/передачи предметов. ");
-
-        updateSteamAuthInterval.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        updateSteamAuthInterval.setText("30");
-        updateSteamAuthInterval.setMaximumSize(new java.awt.Dimension(2147483647, 23));
-        updateSteamAuthInterval.setMinimumSize(new java.awt.Dimension(10, 23));
-        updateSteamAuthInterval.setPreferredSize(new java.awt.Dimension(18, 23));
-
-        jLabel202.setText("мин.");
-        jLabel202.setMaximumSize(new java.awt.Dimension(27, 23));
-        jLabel202.setMinimumSize(new java.awt.Dimension(27, 23));
-        jLabel202.setPreferredSize(new java.awt.Dimension(27, 23));
-
         jLabel100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
         jLabel100.setText("Auto start program:");
         jLabel100.setToolTipText("<html>Авто старт программы через 5 минут, если завершили программы не вы.");
@@ -488,20 +452,6 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(uploadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel99, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(isLoadImage, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(isAllConfirm, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(updateSteamAuthInterval, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel202, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel100, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(isAutoStart)))
@@ -512,23 +462,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(isLoadImage))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(isAllConfirm))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(updateSteamAuthInterval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel202, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(isAutoStart))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(95, 95, 95)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(loadSettings)
                     .addComponent(uploadSettings))
@@ -537,7 +473,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Информация"));
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Info"));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
@@ -635,13 +571,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        allConfirm.setText("Подтвердить все предложения");
-        allConfirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                allConfirmActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -650,8 +579,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(twoFaCode, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(generate2faCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(allConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+                    .addComponent(generate2faCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -661,9 +589,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(twoFaCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(generate2faCode)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(allConfirm)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -695,7 +621,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Главная", jPanel13);
+        jTabbedPane1.addTab("Home", jPanel13);
 
         starTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -730,10 +656,10 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(starTable);
 
-        jPanel30.setBorder(javax.swing.BorderFactory.createTitledBorder("Добавить"));
+        jPanel30.setBorder(javax.swing.BorderFactory.createTitledBorder("Add"));
         jPanel30.setPreferredSize(new java.awt.Dimension(232, 123));
 
-        addStarItem.setText("Добавить");
+        addStarItem.setText("Add");
         addStarItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addStarItemActionPerformed(evt);
@@ -742,7 +668,7 @@ public class Main extends javax.swing.JFrame {
 
         starSubject.setColumns(50);
         starSubject.setRows(2);
-        starSubject.setText("Список названий предметов");
+        starSubject.setText("List items");
         jScrollPane16.setViewportView(starSubject);
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
@@ -768,7 +694,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder("Поиск"));
+        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder("Search"));
 
         findStarItem.setMaximumSize(new java.awt.Dimension(2147483647, 23));
         findStarItem.setMinimumSize(new java.awt.Dimension(10, 23));
@@ -822,28 +748,28 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Избранное", jPanel11);
+        jTabbedPane1.addTab("Favorites", jPanel11);
 
         consoleArea.setColumns(20);
         consoleArea.setRows(5);
         jScrollPane18.setViewportView(consoleArea);
 
         jLabel175.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel175.setText("Консоль:");
+        jLabel175.setText("Console:");
         jLabel175.setMaximumSize(new java.awt.Dimension(18, 23));
         jLabel175.setMinimumSize(new java.awt.Dimension(18, 23));
         jLabel175.setPreferredSize(new java.awt.Dimension(18, 23));
 
-        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder("Настройки"));
+        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder("Settings"));
 
         jLabel178.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel178.setText("Сохранять в файл:");
+        jLabel178.setText("Save to file:");
         jLabel178.setMaximumSize(new java.awt.Dimension(18, 23));
         jLabel178.setMinimumSize(new java.awt.Dimension(18, 23));
         jLabel178.setPreferredSize(new java.awt.Dimension(18, 23));
 
         jLabel179.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel179.setText("Выводить в консоль:");
+        jLabel179.setText("Write to console:");
         jLabel179.setMaximumSize(new java.awt.Dimension(18, 23));
         jLabel179.setMinimumSize(new java.awt.Dimension(18, 23));
         jLabel179.setPreferredSize(new java.awt.Dimension(18, 23));
@@ -857,7 +783,7 @@ public class Main extends javax.swing.JFrame {
         isLogWriteToConsole.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
 
         jLabel182.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel182.setText("Разное:");
+        jLabel182.setText("Other:");
         jLabel182.setMaximumSize(new java.awt.Dimension(18, 23));
         jLabel182.setMinimumSize(new java.awt.Dimension(18, 23));
         jLabel182.setPreferredSize(new java.awt.Dimension(18, 23));
@@ -868,7 +794,7 @@ public class Main extends javax.swing.JFrame {
         isLogOther.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
 
         jLabel183.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel183.setText("Прием/передача:");
+        jLabel183.setText("Steam:");
         jLabel183.setMaximumSize(new java.awt.Dimension(18, 23));
         jLabel183.setMinimumSize(new java.awt.Dimension(18, 23));
         jLabel183.setPreferredSize(new java.awt.Dimension(18, 23));
@@ -878,7 +804,7 @@ public class Main extends javax.swing.JFrame {
         isLogGetOrGive.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
 
         jLabel185.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel185.setText("Информация:");
+        jLabel185.setText("Info:");
         jLabel185.setMaximumSize(new java.awt.Dimension(18, 23));
         jLabel185.setMinimumSize(new java.awt.Dimension(18, 23));
         jLabel185.setPreferredSize(new java.awt.Dimension(18, 23));
@@ -889,7 +815,7 @@ public class Main extends javax.swing.JFrame {
         isLogInfo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
 
         jLabel186.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel186.setText("Ошибки:");
+        jLabel186.setText("Error:");
         jLabel186.setMaximumSize(new java.awt.Dimension(18, 23));
         jLabel186.setMinimumSize(new java.awt.Dimension(18, 23));
         jLabel186.setPreferredSize(new java.awt.Dimension(18, 23));
@@ -962,7 +888,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(241, Short.MAX_VALUE))
         );
 
-        cleanConsole.setText("Очистить");
+        cleanConsole.setText("Clear");
         cleanConsole.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cleanConsoleActionPerformed(evt);
@@ -978,7 +904,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addComponent(jLabel175, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 426, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 450, Short.MAX_VALUE)
                         .addComponent(cleanConsole))
                     .addComponent(jScrollPane18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -995,13 +921,12 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel175, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cleanConsole))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 80, Short.MAX_VALUE))
+                        .addComponent(jScrollPane18))
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Лог", jPanel17);
+        jTabbedPane1.addTab("Log", jPanel17);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1046,7 +971,7 @@ public class Main extends javax.swing.JFrame {
 
     private void initSteam() {
         try {
-            long updateAuthInterval = Long.parseLong(updateSteamAuthInterval.getText()) * 60;
+            long updateAuthInterval = 1800;
             web.setSession(false, updateAuthInterval);
             statusSteamWeb.setText(web.doLogin(false));
             web.setSession(false, updateAuthInterval);
@@ -1066,13 +991,13 @@ public class Main extends javax.swing.JFrame {
             List<TradeOffer> tOffers = tradeOffers.getTradeOffersViaAPI(true);
             for (int i = 0; i < tOffers.size(); i++) {
                 TradeOffer tradeOffer = tOffers.get(i);
-                if (tradeOffer.getMessage().contains(secret) || isAllConfirm.isSelected() || secret.equals("ALL")) {
+                if (tradeOffer.getMessage().contains(secret) || secret.equals("ALL")) {
                     System.out.println();
                     System.out.println(i + " ############################");
                     tradeOffer.getInfo();
                     System.out.println("ACCEPT:");
                     result = tradeOffers.acceptTrade(tradeOffer);
-                    log(GET_GIVE, INFO, "accept trade " + tradeOffer.getTradeofferid() + ", secret " + secret + ", is all confirm " + isAllConfirm.isSelected());
+                    log(GET_GIVE, INFO, "accept trade " + tradeOffer.getTradeofferid() + ", secret " + secret);
                 }
             }
         } catch (Exception ex) {
@@ -1105,30 +1030,6 @@ public class Main extends javax.swing.JFrame {
     private void cleanConsoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanConsoleActionPerformed
         consoleArea.setText("");
     }//GEN-LAST:event_cleanConsoleActionPerformed
-
-    private void allConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allConfirmActionPerformed
-        JOptionPane.showMessageDialog(null, "Дождитесь сообщения о завершении!");
-        helperExecutor.execute(() -> {
-            Map<String, Object> params = getSteamParams();
-            try {
-                if (web == null) {
-                    web = new Steam(params);
-                }
-                if (mobile == null) {
-                    mobile = new Steam(params);
-                }
-                boolean result = false;
-                do {
-                    initSteam();
-                    result = confirmTrades("ALL");
-                } while (result);
-                JOptionPane.showMessageDialog(null, "Завершено!");
-            } catch (Exception ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, "all confirm button " + ex.getMessage());
-            }
-        });
-    }//GEN-LAST:event_allConfirmActionPerformed
 
     private void generate2faCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate2faCodeActionPerformed
         try {
@@ -1321,10 +1222,6 @@ public class Main extends javax.swing.JFrame {
     public ExecutorService getHelperExecutor() {
         return helperExecutor;
     }
-
-    public boolean isLoadImage() {
-        return isLoadImage.isSelected();
-    }
     
     /**
      * @param args the command line arguments
@@ -1362,7 +1259,6 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addStarItem;
-    private javax.swing.JButton allConfirm;
     private javax.swing.JTextField botEmail;
     private javax.swing.JTextField botName;
     private javax.swing.JPasswordField botPassword;
@@ -1372,9 +1268,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField findStarItem;
     private javax.swing.JButton generate2faCode;
     private javax.swing.JPasswordField identitySecret;
-    private javax.swing.JCheckBox isAllConfirm;
     private javax.swing.JCheckBox isAutoStart;
-    private javax.swing.JCheckBox isLoadImage;
     private javax.swing.JCheckBox isLogError;
     private javax.swing.JCheckBox isLogGetOrGive;
     private javax.swing.JCheckBox isLogInfo;
@@ -1390,12 +1284,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel185;
     private javax.swing.JLabel jLabel186;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel201;
-    private javax.swing.JLabel jLabel202;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel67;
@@ -1405,7 +1296,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel17;
@@ -1436,7 +1326,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField steamLogin;
     private javax.swing.JPasswordField steamPassword;
     private javax.swing.JTextField twoFaCode;
-    private javax.swing.JTextField updateSteamAuthInterval;
     private javax.swing.JButton uploadSettings;
     // End of variables declaration//GEN-END:variables
 
@@ -1468,22 +1357,19 @@ public class Main extends javax.swing.JFrame {
             String sharedSecretField = "sharedSecret=webdivision=" + new String(sharedSecret.getPassword()) + "\n";
             String identitySecretField = "identitySecret=webdivision=" + new String(identitySecret.getPassword()) + "\n";
             String deviceIdField = "deviceId=webdivision=" + new String(deviceId.getPassword()) + "\n";
-            String restart = "isAutoStart=webdivision=" + isAutoStart.isSelected() + "\n";          
-            String loadImage = "isLoadImage=webdivision=" + isLoadImage.isSelected() + "\n";
-            String allConfirment = "isAllConfirm=webdivision=" + isAllConfirm.isSelected() + "\n";           
+            String restart = "isAutoStart=webdivision=" + isAutoStart.isSelected() + "\n";                    
             String logSaveToFile = "isLogSaveToFile=webdivision=" + isLogSaveToFile.isSelected() + "\n";
             String logWriteToConsole = "isLogWriteToConsole=webdivision=" + isLogWriteToConsole.isSelected() + "\n";
             String logInfo = "isLogInfo=webdivision=" + isLogInfo.isSelected() + "\n";
             String logError = "isLogError=webdivision=" + isLogError.isSelected() + "\n";           
             String logGetOrGive = "isLogGetOrGive=webdivision=" + isLogGetOrGive.isSelected() + "\n";
             String logOther = "isLogOther=webdivision=" + isLogOther.isSelected() + "\n";            
-            String updateSteamAuth = "updateSteamAuthInterval=webdivision=" + updateSteamAuthInterval.getText() + "\n";
 
             String starT = "starTable=webdivision=" + star.toString() + "\n";
 
             String content = bot + email + pass + status + steamLoginField + steamPassField + steamApiKeyField
                     + sharedSecretField + identitySecretField + deviceIdField + restart + logSaveToFile + logWriteToConsole
-                    + logInfo + logError + logGetOrGive + logOther + loadImage + updateSteamAuth + allConfirment + starT;
+                    + logInfo + logError + logGetOrGive + logOther + starT;
 
             try {
 
@@ -1578,12 +1464,6 @@ public class Main extends javax.swing.JFrame {
                     if ("starTable".equals(setting[0])) {
                         star.loadItems(content);
                     }
-                    if ("isLoadImage".equals(setting[0])) {
-                        isLoadImage.setSelected(Boolean.valueOf(content));
-                    }
-                    if ("isAllConfirm".equals(setting[0])) {
-                        isAllConfirm.setSelected(Boolean.valueOf(content));
-                    }
                     if ("isLogSaveToFile".equals(setting[0])) {
                         isLogSaveToFile.setSelected(Boolean.valueOf(content));
                     }
@@ -1601,10 +1481,7 @@ public class Main extends javax.swing.JFrame {
                     }
                     if ("isLogOther".equals(setting[0])) {
                         isLogOther.setSelected(Boolean.valueOf(content));
-                    }                   
-                    if ("updateSteamAuthInterval".equals(setting[0])) {
-                        updateSteamAuthInterval.setText(content);
-                    }                    
+                    }                                  
 
                     line = reader.readLine();
                 }

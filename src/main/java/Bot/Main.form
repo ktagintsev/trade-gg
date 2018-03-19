@@ -129,8 +129,8 @@
         <Container class="javax.swing.JPanel" name="jPanel13">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&#x413;&#x43b;&#x430;&#x432;&#x43d;&#x430;&#x44f;">
-                <Property name="tabTitle" type="java.lang.String" value="&#x413;&#x43b;&#x430;&#x432;&#x43d;&#x430;&#x44f;"/>
+              <JTabbedPaneConstraints tabName="Home">
+                <Property name="tabTitle" type="java.lang.String" value="Home"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -175,7 +175,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="&#x41f;&#x43e;&#x434;&#x43a;&#x43b;&#x44e;&#x447;&#x435;&#x43d;&#x438;&#x435;"/>
+                    <TitledBorder title="Connection"/>
                   </Border>
                 </Property>
               </Properties>
@@ -233,7 +233,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -422,7 +422,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="&#x41d;&#x430;&#x441;&#x442;&#x440;&#x43e;&#x439;&#x43a;&#x438;"/>
+                    <TitledBorder title="Settings"/>
                   </Border>
                 </Property>
               </Properties>
@@ -440,24 +440,6 @@
                                   <Component id="uploadSettings" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabel41" max="32767" attributes="0"/>
-                                      <Component id="jLabel99" pref="168" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="59" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="isLoadImage" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="isAllConfirm" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel201" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="updateSteamAuthInterval" min="-2" pref="43" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel202" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel100" pref="168" max="32767" attributes="0"/>
                                   <EmptySpace pref="59" max="32767" attributes="0"/>
                                   <Component id="isAutoStart" min="-2" max="-2" attributes="0"/>
@@ -472,28 +454,10 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel99" min="-2" max="-2" attributes="0"/>
-                              <Component id="isLoadImage" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
-                              <Component id="isAllConfirm" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel201" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="updateSteamAuthInterval" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel202" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel100" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="isAutoStart" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="loadSettings" min="-2" max="-2" attributes="0"/>
                               <Component id="uploadSettings" min="-2" max="-2" attributes="0"/>
@@ -545,78 +509,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startROBTActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel99">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/quest.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="&#x417;&#x430;&#x433;&#x440;&#x443;&#x436;&#x430;&#x442;&#x44c; &#x43a;&#x430;&#x440;&#x442;&#x438;&#x43d;&#x43a;&#x438;:"/>
-                    <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#x415;&#x441;&#x43b;&#x438; &#x430;&#x43a;&#x442;&#x438;&#x432;&#x438;&#x440;&#x43e;&#x432;&#x430;&#x43d;&#x43e;, &#x43f;&#x440;&#x43e;&#x433;&#x440;&#x430;&#x43c;&#x43c;&#x430; &#x431;&#x443;&#x434;&#x435;&#x442; &#x437;&#x430;&#x433;&#x440;&#x443;&#x436;&#x430;&#x442;&#x44c; &#x43a;&#x430;&#x440;&#x442;&#x438;&#x43d;&#x43a;&#x438; &#x434;&#x43b;&#x44f; &#x43f;&#x440;&#x435;&#x434;&#x43c;&#x435;&#x442;&#x43e;&#x432;. &lt;br&gt;&#xa;&#x414;&#x43b;&#x44f; &#x437;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43a;&#x438; &#x43a;&#x430;&#x440;&#x442;&#x438;&#x43d;&#x43e;&#x43a; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44f; &#x432;&#x440;&#x435;&#x43c;&#x44f;, &#x43f;&#x43e;&#x44d;&#x442;&#x43e;&#x43c;&#x443; &#x435;&#x441;&#x43b;&#x438; &#x432;&#x430;&#x43c; &#x43d;&#x443;&#x436;&#x43d;&#x43e; &#x431;&#x44b;&#x441;&#x442;&#x440;&#x43e; &#x437;&#x430;&#x433;&#x440;&#x443;&#x437;&#x438;&#x442;&#x44c; &lt;br&gt;&#xa;&#x431;&#x43e;&#x43b;&#x44c;&#x448;&#x43e;&#x439; &#x43e;&#x431;&#x44a;&#x435;&#x43c; &#x434;&#x430;&#x43d;&#x43d;&#x44b;&#x445; &#x432; &#x43f;&#x440;&#x43e;&#x433;&#x440;&#x430;&#x43c;&#x43c;&#x443; - &#x441;&#x43d;&#x438;&#x43c;&#x438;&#x442;&#x435; &#x444;&#x43b;&#x430;&#x436;&#x43e;&#x43a;."/>
-                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[156, 23]"/>
-                    </Property>
-                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[156, 23]"/>
-                    </Property>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[156, 23]"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="isLoadImage">
-                  <Properties>
-                    <Property name="selected" type="boolean" value="true"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="isAllConfirm">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel41">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/quest.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;&#x41f;&#x43e;&#x434;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x430;&#x442;&#x44c; &#x432;&#x441;&#x435;&lt;br&gt;&#x43f;&#x440;&#x435;&#x434;&#x43b;&#x43e;&#x436;&#x435;&#x43d;&#x438;&#x44f; &#x43e;&#x431;&#x43c;&#x435;&#x43d;&#x430;:"/>
-                    <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#x41f;&#x43e; &#x443;&#x43c;&#x43e;&#x43b;&#x447;&#x430;&#x43d;&#x438;&#x44e; &#x43f;&#x440;&#x43e;&#x433;&#x440;&#x430;&#x43c;&#x43c;&#x430; &#x43f;&#x43e;&#x434;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x430;&#x435;&#x442; &#x43e;&#x431;&#x43c;&#x435;&#x43d;&#x44b; &#x442;&#x43e;&#x43b;&#x44c;&#x43a;&#x43e; &#x43e;&#x442; &#x43c;&#x430;&#x440;&#x43a;&#x435;&#x442;&#x430;. &lt;br&gt;&#xa;&#x41d;&#x43e; &#x435;&#x441;&#x43b;&#x438; &#x432;&#x430;&#x43c; &#x43d;&#x443;&#x436;&#x43d;&#x43e; &#x43f;&#x43e;&#x434;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x430;&#x442;&#x44c; &#x43f;&#x440;&#x435;&#x434;&#x43b;&#x43e;&#x436;&#x435;&#x43d;&#x438;&#x44f; &#x43e;&#x431;&#x43c;&#x435;&#x43d;&#x430; &#x43d;&#x435; &#x43e;&#x442; &#x43c;&#x430;&#x440;&#x43a;&#x435;&#x442;&#x430; - &#x430;&#x43a;&#x442;&#x438;&#x432;&#x438;&#x440;&#x443;&#x439;&#x442;&#x435; &#x444;&#x43b;&#x430;&#x436;&#x43e;&#x43a;."/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel201">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/quest.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;&#x41e;&#x431;&#x43d;&#x43e;&#x432;&#x43b;&#x44f;&#x442;&#x44c; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x430;&#x446;&#x438;&#x44e; &lt;br&gt;Steam &#x43a;&#x430;&#x436;&#x434;&#x44b;&#x435; N &#x43c;&#x438;&#x43d;&#x443;&#x442;:"/>
-                    <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#x410;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x430;&#x446;&#x438;&#x44f; &#x432; Steam &#x43d;&#x435;&#x43e;&#x431;&#x445;&#x43e;&#x434;&#x438;&#x43c;&#x430; &#x434;&#x43b;&#x44f; &#x43f;&#x440;&#x438;&#x435;&#x43c;&#x430;/&#x43f;&#x435;&#x440;&#x435;&#x434;&#x430;&#x447;&#x438; &#x43f;&#x440;&#x435;&#x434;&#x43c;&#x435;&#x442;&#x43e;&#x432;. &lt;br&gt;&#x41f;&#x440;&#x43e;&#x433;&#x440;&#x430;&#x43c;&#x43c;&#x430; &#x447;&#x435;&#x440;&#x435;&#x437; N &#x43c;&#x438;&#x43d;&#x443;&#x442; &#x431;&#x443;&#x434;&#x435;&#x442; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x43e;&#x432;&#x44b;&#x432;&#x430;&#x442;&#x44c;&#x441;&#x44f; &#x432; Steam &#x438; &#x441;&#x43e;&#x445;&#x440;&#x430;&#x43d;&#x44f;&#x442;&#x44c; &#x441;&#x435;&#x441;&#x441;&#x438;&#x44e;&lt;br&gt; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x434;&#x43b;&#x44f; &#x43f;&#x440;&#x438;&#x435;&#x43c;&#x430;/&#x43f;&#x435;&#x440;&#x435;&#x434;&#x430;&#x447;&#x438; &#x43f;&#x440;&#x435;&#x434;&#x43c;&#x435;&#x442;&#x43e;&#x432;. "/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="updateSteamAuthInterval">
-                  <Properties>
-                    <Property name="horizontalAlignment" type="int" value="4"/>
-                    <Property name="text" type="java.lang.String" value="30"/>
-                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[2147483647, 23]"/>
-                    </Property>
-                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[10, 23]"/>
-                    </Property>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[18, 23]"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel202">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x43c;&#x438;&#x43d;."/>
-                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[27, 23]"/>
-                    </Property>
-                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[27, 23]"/>
-                    </Property>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[27, 23]"/>
-                    </Property>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel100">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -643,7 +535,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="&#x418;&#x43d;&#x444;&#x43e;&#x440;&#x43c;&#x430;&#x446;&#x438;&#x44f;"/>
+                    <TitledBorder title="Info"/>
                   </Border>
                 </Property>
               </Properties>
@@ -811,7 +703,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="twoFaCode" alignment="1" max="32767" attributes="0"/>
                               <Component id="generate2faCode" alignment="1" max="32767" attributes="0"/>
-                              <Component id="allConfirm" alignment="0" pref="198" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -824,9 +715,7 @@
                           <Component id="twoFaCode" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="generate2faCode" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="allConfirm" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <EmptySpace pref="48" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -849,14 +738,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generate2faCodeActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="allConfirm">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x41f;&#x43e;&#x434;&#x442;&#x432;&#x435;&#x440;&#x434;&#x438;&#x442;&#x44c; &#x432;&#x441;&#x435; &#x43f;&#x440;&#x435;&#x434;&#x43b;&#x43e;&#x436;&#x435;&#x43d;&#x438;&#x44f;"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allConfirmActionPerformed"/>
-                  </Events>
-                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -864,8 +745,8 @@
         <Container class="javax.swing.JPanel" name="jPanel11">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&#x418;&#x437;&#x431;&#x440;&#x430;&#x43d;&#x43d;&#x43e;&#x435;">
-                <Property name="tabTitle" type="java.lang.String" value="&#x418;&#x437;&#x431;&#x440;&#x430;&#x43d;&#x43d;&#x43e;&#x435;"/>
+              <JTabbedPaneConstraints tabName="Favorites">
+                <Property name="tabTitle" type="java.lang.String" value="Favorites"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -933,7 +814,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="&#x414;&#x43e;&#x431;&#x430;&#x432;&#x438;&#x442;&#x44c;"/>
+                    <TitledBorder title="Add"/>
                   </Border>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -972,7 +853,7 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="addStarItem">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x414;&#x43e;&#x431;&#x430;&#x432;&#x438;&#x442;&#x44c;"/>
+                    <Property name="text" type="java.lang.String" value="Add"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addStarItemActionPerformed"/>
@@ -989,7 +870,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="50"/>
                         <Property name="rows" type="int" value="2"/>
-                        <Property name="text" type="java.lang.String" value="&#x421;&#x43f;&#x438;&#x441;&#x43e;&#x43a; &#x43d;&#x430;&#x437;&#x432;&#x430;&#x43d;&#x438;&#x439; &#x43f;&#x440;&#x435;&#x434;&#x43c;&#x435;&#x442;&#x43e;&#x432;"/>
+                        <Property name="text" type="java.lang.String" value="List items"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1000,7 +881,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="&#x41f;&#x43e;&#x438;&#x441;&#x43a;"/>
+                    <TitledBorder title="Search"/>
                   </Border>
                 </Property>
               </Properties>
@@ -1049,8 +930,8 @@
         <Container class="javax.swing.JPanel" name="jPanel17">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&#x41b;&#x43e;&#x433;">
-                <Property name="tabTitle" type="java.lang.String" value="&#x41b;&#x43e;&#x433;"/>
+              <JTabbedPaneConstraints tabName="Log">
+                <Property name="tabTitle" type="java.lang.String" value="Log"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -1063,7 +944,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel175" min="-2" pref="81" max="-2" attributes="0"/>
-                              <EmptySpace pref="426" max="32767" attributes="0"/>
+                              <EmptySpace pref="450" max="32767" attributes="0"/>
                               <Component id="cleanConsole" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane18" max="32767" attributes="0"/>
@@ -1085,8 +966,7 @@
                                   <Component id="cleanConsole" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane18" min="-2" pref="333" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="80" max="32767" attributes="0"/>
+                              <Component id="jScrollPane18" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jPanel18" max="32767" attributes="0"/>
                       </Group>
@@ -1116,7 +996,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="13" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&#x41a;&#x43e;&#x43d;&#x441;&#x43e;&#x43b;&#x44c;:"/>
+                <Property name="text" type="java.lang.String" value="Console:"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[18, 23]"/>
                 </Property>
@@ -1132,7 +1012,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="&#x41d;&#x430;&#x441;&#x442;&#x440;&#x43e;&#x439;&#x43a;&#x438;"/>
+                    <TitledBorder title="Settings"/>
                   </Border>
                 </Property>
               </Properties>
@@ -1222,7 +1102,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x421;&#x43e;&#x445;&#x440;&#x430;&#x43d;&#x44f;&#x442;&#x44c; &#x432; &#x444;&#x430;&#x439;&#x43b;:"/>
+                    <Property name="text" type="java.lang.String" value="Save to file:"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[18, 23]"/>
                     </Property>
@@ -1239,7 +1119,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x412;&#x44b;&#x432;&#x43e;&#x434;&#x438;&#x442;&#x44c; &#x432; &#x43a;&#x43e;&#x43d;&#x441;&#x43e;&#x43b;&#x44c;:"/>
+                    <Property name="text" type="java.lang.String" value="Write to console:"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[18, 23]"/>
                     </Property>
@@ -1278,7 +1158,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x420;&#x430;&#x437;&#x43d;&#x43e;&#x435;:"/>
+                    <Property name="text" type="java.lang.String" value="Other:"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[18, 23]"/>
                     </Property>
@@ -1307,7 +1187,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x41f;&#x440;&#x438;&#x435;&#x43c;/&#x43f;&#x435;&#x440;&#x435;&#x434;&#x430;&#x447;&#x430;:"/>
+                    <Property name="text" type="java.lang.String" value="Steam:"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[18, 23]"/>
                     </Property>
@@ -1335,7 +1215,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x418;&#x43d;&#x444;&#x43e;&#x440;&#x43c;&#x430;&#x446;&#x438;&#x44f;:"/>
+                    <Property name="text" type="java.lang.String" value="Info:"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[18, 23]"/>
                     </Property>
@@ -1364,7 +1244,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x41e;&#x448;&#x438;&#x431;&#x43a;&#x438;:"/>
+                    <Property name="text" type="java.lang.String" value="Error:"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[18, 23]"/>
                     </Property>
@@ -1392,7 +1272,7 @@
             </Container>
             <Component class="javax.swing.JButton" name="cleanConsole">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x41e;&#x447;&#x438;&#x441;&#x442;&#x438;&#x442;&#x44c;"/>
+                <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cleanConsoleActionPerformed"/>
