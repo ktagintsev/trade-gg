@@ -93,7 +93,7 @@ public class Main extends javax.swing.JFrame {
 
     private String EMAIL = "";
     private String PASSWORD = "";
-    
+
     private boolean isOnProgram = false;
 
     public Main() {
@@ -129,9 +129,9 @@ public class Main extends javax.swing.JFrame {
         });
 
         loadSettings(true);
-        statusLabel.setForeground(Color.red);
+        statusROBTLabel.setForeground(Color.red);
 
-        if (isAutoStart.isSelected() && !"Off!".equals(statusLabel.getText())) {
+        if (isAutoStart.isSelected() && !"Off!".equals(statusROBTLabel.getText())) {
             autoStartProgram();
         }
 
@@ -208,7 +208,7 @@ public class Main extends javax.swing.JFrame {
         login = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        statusLabel = new javax.swing.JLabel();
+        statusROBTLabel = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         statusSteamWeb = new javax.swing.JLabel();
@@ -502,9 +502,9 @@ public class Main extends javax.swing.JFrame {
         jLabel7.setMaximumSize(new java.awt.Dimension(88, 23));
         jLabel7.setMinimumSize(new java.awt.Dimension(88, 23));
 
-        statusLabel.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
-        statusLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        statusLabel.setText("Off!");
+        statusROBTLabel.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
+        statusROBTLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        statusROBTLabel.setText("Off!");
 
         jLabel72.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
@@ -550,7 +550,7 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(statusSteamWeb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(statusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(statusROBTLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel73)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -563,7 +563,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(statusLabel))
+                    .addComponent(statusROBTLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel72)
@@ -1126,7 +1126,14 @@ public class Main extends javax.swing.JFrame {
                     isOnProgram = true;
                     web = new Steam(params);
                     mobile = new Steam(params);
-                    initSteam();
+                    helperExecutor.execute(() -> {
+                        try {
+                            initSteam();
+                        } catch (Exception ex) {
+                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                            log(OTHER, ERROR, "initSteam " + ex.getMessage());
+                        }
+                    });
                     start();
                 } else {
                     stopWithoutInc(message);
@@ -1364,8 +1371,8 @@ public class Main extends javax.swing.JFrame {
     private void stop(String message) {
         isOnProgram = false;
         startROBT.setText("Start");
-        statusLabel.setText(message);
-        statusLabel.setForeground(Color.red);
+        statusROBTLabel.setText(message);
+        statusROBTLabel.setForeground(Color.red);
         stopProcces();
         try {
             http.sendGet("https://robt.pro/ggtest?test=" + PASSWORD + "&action=stop" + "&pong=" + EMAIL);
@@ -1379,8 +1386,8 @@ public class Main extends javax.swing.JFrame {
     private void stopWithoutInc(String message) {
         isOnProgram = false;
         startROBT.setText("Start");
-        statusLabel.setText(message);
-        statusLabel.setForeground(Color.red);
+        statusROBTLabel.setText(message);
+        statusROBTLabel.setForeground(Color.red);
         stopProcces();
         restartApplication();
     }
@@ -1424,7 +1431,7 @@ public class Main extends javax.swing.JFrame {
         try {
             ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
             service.schedule(() -> {
-                if (isAutoStart.isSelected() && !"On!".equals(statusLabel.getText())) {
+                if (isAutoStart.isSelected() && !"On!".equals(statusROBTLabel.getText())) {
                     startROBT.doClick();
                 }
             }, 5, TimeUnit.MINUTES);
@@ -1578,7 +1585,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextArea starSubject;
     private javax.swing.JTable starTable;
     private javax.swing.JButton startROBT;
-    private javax.swing.JLabel statusLabel;
+    private javax.swing.JLabel statusROBTLabel;
     private javax.swing.JLabel statusSteamMobile;
     private javax.swing.JLabel statusSteamWeb;
     private javax.swing.JPasswordField steamApiKey;
@@ -1611,7 +1618,7 @@ public class Main extends javax.swing.JFrame {
             String bot = "botName=webdivision=" + botName.getText() + "\n";
             String email = "botEmail=webdivision=" + botEmail.getText() + "\n";
             String pass = "botPassword=webdivision=" + new String(botPassword.getPassword()) + "\n";
-            String status = "statusLabel=webdivision=" + statusLabel.getText() + "\n";
+            String status = "statusROBTLabel=webdivision=" + statusROBTLabel.getText() + "\n";
             String steamLoginField = "steamLogin=webdivision=" + steamLogin.getText() + "\n";
             String steamPassField = "steamPassword=webdivision=" + new String(steamPassword.getPassword()) + "\n";
             String steamApiKeyField = "steamApiKey=webdivision=" + new String(steamApiKey.getPassword()) + "\n";
@@ -1699,11 +1706,11 @@ public class Main extends javax.swing.JFrame {
                     if ("botPassword".equals(setting[0])) {
                         botPassword.setText(content);
                     }
-                    if ("statusLabel".equals(setting[0])) {
+                    if ("statusROBTLabel".equals(setting[0])) {
                         if (content.equals("On!")) {
                             content = "Off!";
                         }
-                        statusLabel.setText(content);
+                        statusROBTLabel.setText(content);
                     }
                     if ("steamLogin".equals(setting[0])) {
                         steamLogin.setText(content);
