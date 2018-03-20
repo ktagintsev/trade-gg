@@ -1195,7 +1195,7 @@ public class Main extends javax.swing.JFrame {
                 WebDriver driver = new ChromeDriver();
                 try {
                     driver.get("https://tradeit.gg/");
-                    driver.manage().window().setSize(new Dimension(1024, 768));
+                    driver.manage().window().setSize(new Dimension(1280, 1024));
                     WebDriverWait wait = new WebDriverWait(driver, 20);
                     login(driver, wait);
                     saveTradeLink(wait);
