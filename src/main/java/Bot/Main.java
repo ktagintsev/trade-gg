@@ -1327,7 +1327,7 @@ public class Main extends javax.swing.JFrame {
 
         twofactorcode_entry.submit();
     }
-    
+
     private void saveTradeLink(WebDriverWait wait) throws Exception {
         WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("username")));
         username.click();
@@ -1348,13 +1348,18 @@ public class Main extends javax.swing.JFrame {
             search.clear();
             search.sendKeys(name);
             if (isFoundName(wait, name) && isTradeClick(wait)) {
+                try {
+                    WebElement confirm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='trade-confirmed']//p[@class='trade-success']")));
+                    boolean result = false;
+                    do {
+                        initSteam();
+                        result = confirmTrades("ALL");
+                    } while (result);
+                } catch (Exception ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 Thread.sleep(15000);
-                /*boolean result = false;
-                do {
-                    initSteam();
-                    result = confirmTrades("ALL");
-                } while (result);*/
-            }            
+            }
         }
     }
 
@@ -1368,17 +1373,17 @@ public class Main extends javax.swing.JFrame {
             return false;
         }
     }
-    
+
     private boolean isTradeClick(WebDriverWait wait) {
         try {
             WebElement trade = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("trade")));
-            if(trade.isEnabled()){
+            if (trade.isEnabled()) {
                 trade.click();
                 return true;
             } else {
                 log(OTHER, INFO, "isTradeClick false");
                 return false;
-            }    
+            }
         } catch (Exception e) {
             log(OTHER, ERROR, "isTradeClick false");
             return false;
@@ -1638,6 +1643,7 @@ public class Main extends javax.swing.JFrame {
             String steamLoginField = "steamLogin=webdivision=" + steamLogin.getText() + "\n";
             String steamPassField = "steamPassword=webdivision=" + new String(steamPassword.getPassword()) + "\n";
             String steamApiKeyField = "steamApiKey=webdivision=" + new String(steamApiKey.getPassword()) + "\n";
+            String steamTradeLinkField = "steamTradeLink=webdivision=" + new String(steamTradeLink.getPassword()) + "\n";
             String sharedSecretField = "sharedSecret=webdivision=" + new String(sharedSecret.getPassword()) + "\n";
             String identitySecretField = "identitySecret=webdivision=" + new String(identitySecret.getPassword()) + "\n";
             String deviceIdField = "deviceId=webdivision=" + new String(deviceId.getPassword()) + "\n";
@@ -1651,7 +1657,7 @@ public class Main extends javax.swing.JFrame {
 
             String starT = "starTable=webdivision=" + star.toString() + "\n";
 
-            String content = bot + email + pass + status + steamLoginField + steamPassField + steamApiKeyField
+            String content = bot + email + pass + status + steamLoginField + steamPassField + steamApiKeyField + steamTradeLinkField
                     + sharedSecretField + identitySecretField + deviceIdField + restart + logSaveToFile + logWriteToConsole
                     + logInfo + logError + logGetOrGive + logOther + starT;
 
@@ -1735,6 +1741,9 @@ public class Main extends javax.swing.JFrame {
                     }
                     if ("steamApiKey".equals(setting[0])) {
                         steamApiKey.setText(content);
+                    }
+                    if ("steamTradeLink".equals(setting[0])) {
+                        steamTradeLink.setText(content);
                     }
                     if ("sharedSecret".equals(setting[0])) {
                         sharedSecret.setText(content);
