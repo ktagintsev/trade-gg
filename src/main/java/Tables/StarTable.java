@@ -186,4 +186,13 @@ public class StarTable extends Table {
             }
         }
     }
+
+    public List<String> getNames() {
+        List<String> names = new ArrayList<>();
+        for (int i = 0; i < this.model.getRowCount(); i++) {
+            String name = (String) this.model.getValueAt(i, nameColumn);
+            names.add(name);
+        }
+        return names;
+    }
 }

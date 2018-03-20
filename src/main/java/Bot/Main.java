@@ -55,7 +55,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -1144,32 +1143,10 @@ public class Main extends javax.swing.JFrame {
                 WebDriver driver = new ChromeDriver();
                 try {
                     driver.get("https://tradeit.gg/");
-
-                    WebDriverWait wait = new WebDriverWait(driver, 20);
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("steamlogin")));
-
-                    WebElement signin = driver.findElement(By.className("steamlogin"));
-                    signin.click();
-
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("steamAccountName")));
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("steamPassword")));
-
-                    WebElement steamAccountName = driver.findElement(By.id("steamAccountName"));
-                    steamAccountName.sendKeys(steamLogin.getText());
-
-                    WebElement steamPas = driver.findElement(By.id("steamPassword"));
-                    steamPas.sendKeys(new String(steamPassword.getPassword()));
-
-                    steamAccountName.submit();
-
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("twofactorcode_entry")));
-
-                    WebElement twofactorcode_entry = driver.findElement(By.id("twofactorcode_entry"));
-                    Steam steam = new Steam(getSteamParams());
-                    steam.getSteamGuard().generateSteamGuardCode();
-                    twofactorcode_entry.sendKeys(steam.getSteamGuard().generateSteamGuardCode());
-
-                    twofactorcode_entry.submit();
+                    
+                    WebDriverWait wait = new WebDriverWait(driver, 20);                 
+                    login(driver, wait);                   
+                    search(driver, wait);
 
                     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea")));
 
@@ -1200,6 +1177,44 @@ public class Main extends javax.swing.JFrame {
         star.removeStarItems();
     }//GEN-LAST:event_removeStarItemsActionPerformed
 
+    private void login(WebDriver driver, WebDriverWait wait) throws Exception {
+        
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("steamlogin")));
+
+        WebElement signin = driver.findElement(By.className("steamlogin"));
+        signin.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("steamAccountName")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("steamPassword")));
+
+        WebElement steamAccountName = driver.findElement(By.id("steamAccountName"));
+        steamAccountName.sendKeys(steamLogin.getText());
+
+        WebElement steamPas = driver.findElement(By.id("steamPassword"));
+        steamPas.sendKeys(new String(steamPassword.getPassword()));
+
+        steamAccountName.submit();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("twofactorcode_entry")));
+
+        WebElement twofactorcode_entry = driver.findElement(By.id("twofactorcode_entry"));
+        Steam steam = new Steam(getSteamParams());
+        steam.getSteamGuard().generateSteamGuardCode();
+        twofactorcode_entry.sendKeys(steam.getSteamGuard().generateSteamGuardCode());
+
+        twofactorcode_entry.submit();
+    }
+    
+    private void search(WebDriver driver, WebDriverWait wait) throws Exception {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssearch")));
+        WebElement search = driver.findElement(By.id("ssearch"));      
+        List<String> names = star.getNames();
+        for (String name : names) {
+            search.sendKeys(name);
+            Thread.sleep(10000);
+        }
+    }
+    
     private void stop(String message) {
         startROBT.setText("Старт");
         statusLabel.setText(message);
