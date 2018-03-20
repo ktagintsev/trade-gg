@@ -44,48 +44,14 @@ public class StarTable extends Table {
 
     public StarTable(JTable table, Main robt) {
         super(table, robt);
-        super.gnameColumn = 0;
-        super.iconColumn = 1;
-        super.nameColumn = 2;
-        super.minPriceColumn = 3;
-        super.maxPriceColumn = 4;
-        super.countColumn = 5;
-        super.classidColumn = 6;
-        super.instanceidColumn = 7;
-        super.serverColumn = 8;
-        super.iconUrlColumn = 9;
+        super.nameColumn = 0;
 
-        super.setMaxWidth(super.gnameColumn, 100);
-        super.setMinWidth(super.gnameColumn, 100);
-        super.setMaxWidth(super.iconColumn, 100);
-        super.setMinWidth(super.iconColumn, 100);
-        super.setMaxWidth(super.minPriceColumn, 100);
-        super.setMinWidth(super.minPriceColumn, 100);
-        super.setMaxWidth(super.maxPriceColumn, 100);
-        super.setMinWidth(super.maxPriceColumn, 100);
-        super.setMaxWidth(super.countColumn, 100);
-        super.setMinWidth(super.countColumn, 100);
-        super.setMaxWidth(super.classidColumn, 0);
-        super.setMinWidth(super.classidColumn, 0);
-        super.setPreferredWidth(super.classidColumn, 0);
-        super.setMaxWidth(super.instanceidColumn, 0);
-        super.setMinWidth(super.instanceidColumn, 0);
-        super.setPreferredWidth(super.instanceidColumn, 0);
-        super.setMaxWidth(super.serverColumn, 0);
-        super.setMinWidth(super.serverColumn, 0);
-        super.setPreferredWidth(super.serverColumn, 0);
-        super.setMaxWidth(super.iconUrlColumn, 0);
-        super.setMinWidth(super.iconUrlColumn, 0);
-        super.setPreferredWidth(super.iconUrlColumn, 0);
         DefaultTableCellRenderer cellRenderer = new DefaultTableCellRenderer();
         cellRenderer.setHorizontalAlignment(JLabel.CENTER);
-        super.setCellRenderer(super.gnameColumn, cellRenderer);
-        super.setCellRenderer(super.minPriceColumn, cellRenderer);
-        super.setCellRenderer(super.maxPriceColumn, cellRenderer);
-        super.setCellRenderer(super.countColumn, cellRenderer);
+        super.setCellRenderer(super.nameColumn, cellRenderer);
 
         List<RowSorter.SortKey> sortKeys = new ArrayList<>(5);
-        sortKeys.add(new RowSorter.SortKey(this.gnameColumn, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(this.nameColumn, SortOrder.ASCENDING));
         super.rowSorter.setSortKeys(sortKeys);
 
         this.model.addTableModelListener((TableModelEvent evt) -> {
@@ -107,68 +73,33 @@ public class StarTable extends Table {
             this.robt.starPopupMenuSelected.show(evt.getComponent(), evt.getX(), evt.getY());
         }
         int column = this.table.columnAtPoint(evt.getPoint());
-        if (evt.getClickCount() == 2 && column == maxPriceColumn) {
+        if (evt.getClickCount() == 2 && column == nameColumn) {
             int row = this.table.convertRowIndexToModel(this.table.getSelectedRow());
-            this.oldPrice = (double) this.model.getValueAt(row, this.maxPriceColumn);
-        }
-        if (evt.getClickCount() == 2 && column == countColumn) {
-            int row = this.table.convertRowIndexToModel(this.table.getSelectedRow());
-            this.oldCount = (int) this.model.getValueAt(row, this.countColumn);
-        }
-        if (evt.getClickCount() == 2 && column == minPriceColumn) {
-            int row = this.table.convertRowIndexToModel(this.table.getSelectedRow());
-            this.oldMinPrice = (double) this.model.getValueAt(row, this.minPriceColumn);
+            this.oldPrice = (double) this.model.getValueAt(row, this.nameColumn);
         }
     }
 
-    public void addStarItem(String content, double price, int count) {
-        List<Object[]> rows = new ArrayList<>();
-        JSONArray star = new JSONArray();
-        String links[] = content.split("\n");
-        if (!"URLs".equals(links[0])) {
-            for (String link : links) {
+    public void addStarItem(String content) {
+        String names[] = content.split("\n");
+        if (!"List items".equals(names[0])) {
+            for (String name : names) {
                 try {
-                    String[] url = this.parseUrlItem(link);
-                    for (int i = 0; i < this.robt.games.size(); i++) {
-                        Game game = this.robt.games.get(i);
-                        if (!game.isEnabled()) {
-                            continue;
-                        }
-                        if (game.name.equals(url[0])) {
-                            JSONObject subject = new JSONObject();
-                            long classid = Long.parseLong(url[1]);
-                            long instanceid = Long.parseLong(url[2]);
-                            if (isInTable(this.model, classid, instanceid, game.server, this.classidColumn, this.instanceidColumn, this.serverColumn)) {
-                                continue;
-                            }
-                            subject.put("i_classid", classid);
-                            subject.put("i_instanceid", instanceid);
-                            subject.put("gname", game.name);
-                            star.put(subject.toString());
-                        }
+                    if (isInTable(name)) {
+                        continue;
                     }
+                    this.model.addRow(new Object[]{name});
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Ошибка создания! Проверьте ссылки на предметы!");
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     return;
                 }
             }
-
             JOptionPane.showMessageDialog(null, "Добавлено!");
         }
     }
 
     public void showStarItems() {
         String filter = "";
-        for (int i = 0; i < this.robt.games.size(); i++) {
-            Game game = this.robt.games.get(i);
-            if (!game.isEnabled()) {
-                continue;
-            }
-            if (game.isLoadStar()) {
-                filter = filter + game.name + "|";
-            }
-        }
         if (!"".equals(filter)) {
             filter = filter.substring(0, filter.length() - 1);
         } else {

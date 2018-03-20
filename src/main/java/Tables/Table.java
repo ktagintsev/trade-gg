@@ -19,8 +19,6 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 /**
  *
@@ -74,7 +72,7 @@ public class Table {
 
     public int oldCount;
     public boolean isSetOldCount = false;
-    
+
     public double oldMinPrice;
     public boolean isOldMinPrice = false;
 
@@ -149,21 +147,14 @@ public class Table {
         return false;
     }
 
-    protected String[] parseUrlItem(String link) throws Exception {
-        URL url = new URL(link);
-        String[] s = url.getPath().split("/")[2].split("-");
-        String name = "";
-        if (url.getHost().contains("csgo")) {
-            name = "CSGO";
+    public boolean isInTable(String name) {
+        for (int i = 0; i < this.model.getRowCount(); i++) {
+            String n = (String) this.model.getValueAt(i, nameColumn);
+            if (name.equals(n)) {
+                return true;
+            }
         }
-        if (url.getHost().contains("dota")) {
-            name = "DOTA";
-        }
-        if (url.getHost().contains("pubg")) {
-            name = "PUBG";
-        }
-        String[] item = {name, s[0], s[1]};
-        return item;
+        return false;
     }
 
     public void removeSelectedItem() {

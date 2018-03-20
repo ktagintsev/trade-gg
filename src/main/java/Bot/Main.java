@@ -636,14 +636,14 @@ public class Main extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Игра", "Картинка", "Название", "Min. цена", "Max. порог", "Количество", "Classid", "Instanceid", "Server", "iconUrl"
+                "Название"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, javax.swing.Icon.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true, true, false, false, false, false
+                true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1130,7 +1130,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_findStarItemKeyReleased
 
     private void addStarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStarItemActionPerformed
-        star.addStarItem(starSubject.getText(), 0, 0);
+        star.addStarItem(starSubject.getText());
     }//GEN-LAST:event_addStarItemActionPerformed
 
     private void starTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_starTableMouseReleased
