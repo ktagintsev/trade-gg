@@ -80,7 +80,7 @@ public class Main extends javax.swing.JFrame {
     public static final int ALLOW = 5;
     private Http http = new Http();
     private ScheduledExecutorService scheduledExecutor = new ScheduledThreadPoolExecutor(2);
-    private ExecutorService helperExecutor = Executors.newFixedThreadPool(1);
+    private ExecutorService helperExecutor = Executors.newFixedThreadPool(2);
     private ScheduledExecutorService stopScheduledExecutor;
     private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     private Steam web = null;
