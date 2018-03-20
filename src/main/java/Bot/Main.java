@@ -52,6 +52,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -1192,6 +1193,7 @@ public class Main extends javax.swing.JFrame {
                 }
                 System.setProperty("webdriver.chrome.driver", path);
                 WebDriver driver = new ChromeDriver();
+                driver.manage().window().setSize(new Dimension(1024,768));
                 try {
                     driver.get("https://tradeit.gg/");
 
