@@ -85,7 +85,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" pref="497" max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" min="-2" pref="545" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -401,6 +401,8 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="login" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="login1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -424,7 +426,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="startROBT" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="login" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="login" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="login1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -498,6 +503,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="login1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Search"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="login1ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel7">
@@ -530,7 +543,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="statusSteamMobile" pref="155" max="32767" attributes="0"/>
+                                  <Component id="statusSteamMobile" pref="129" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -571,7 +584,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/quest.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x421;&#x442;&#x430;&#x442;&#x443;&#x441; &#x431;&#x43e;&#x442;"/>
+                    <Property name="text" type="java.lang.String" value="Status ROBT"/>
                     <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#x421;&#x442;&#x430;&#x442;&#x443;&#x441;&#x44b;: &lt;br&gt;&#xa;&quot;On!&quot; - &#x432;&#x441;&#x435; &#x43e;&#x442;&#x43b;&#x438;&#x447;&#x43d;&#x43e;, &#x431;&#x43e;&#x442; &#x440;&#x430;&#x431;&#x43e;&#x442;&#x430;&#x435;&#x442;!&lt;br&gt;&#xa;&quot;Off!&quot; - &#x431;&#x43e;&#x442; &#x43e;&#x442;&#x43a;&#x43b;&#x44e;&#x447;&#x435;&#x43d;.&lt;br&gt;&#xa;&quot;&#x41d;&#x435;&#x432;&#x435;&#x440;&#x43d;&#x44b;&#x439; email &#x438;&#x43b;&#x438; &#x43f;&#x430;&#x440;&#x43e;&#x43b;&#x44c;&quot; - &#x43f;&#x440;&#x43e;&#x432;&#x435;&#x440;&#x44c;&#x442;&#x435; &#x43f;&#x440;&#x430;&#x432;&#x438;&#x43b;&#x44c;&#x43d;&#x43e;&#x441;&#x442;&#x44c; &#x432;&#x430;&#x448;&#x435;&#x433;&#x43e; email &#x438;&#x43b;&#x438; &#x43f;&#x430;&#x440;&#x43e;&#x43b;&#x44f;.&lt;br&gt;&#xa;&quot;&#x41a;&#x443;&#x43f;&#x438;&#x442;&#x435; &#x43b;&#x438;&#x446;&#x435;&#x43d;&#x437;&#x438;&#x44e;!&quot; - &#x43d;&#x443;&#x436;&#x43d;&#x43e; &#x43a;&#x443;&#x43f;&#x438;&#x442;&#x44c; &#x438;&#x43b;&#x438; &#x43f;&#x440;&#x43e;&#x434;&#x43b;&#x438;&#x442;&#x44c; &#x43b;&#x438;&#x446;&#x435;&#x43d;&#x437;&#x438;&#x44e; &#x43d;&#x430; &#x441;&#x430;&#x439;&#x442;&#x435; steam-market-Bot.ru &#x432; &#x43b;&#x438;&#x447;&#x43d;&#x43e;&#x43c; &#x43a;&#x430;&#x431;&#x438;&#x43d;&#x435;&#x442;&#x435;.&#xa;&lt;/html&gt;"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Default Cursor"/>
@@ -601,7 +614,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/quest.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x421;&#x442;&#x430;&#x442;&#x443;&#x441; web"/>
+                    <Property name="text" type="java.lang.String" value="Status steam web"/>
                     <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#x421;&#x442;&#x430;&#x442;&#x443;&#x441;&#x44b;: &lt;br&gt;&#xa;&quot;logout&quot; - &#x432;&#x44b; &#x43d;&#x435; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x43e;&#x432;&#x430;&#x43d;&#x44b; &#x432; web steam!&lt;br&gt;&#xa;&quot;login&quot; - &#x432;&#x44b; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x43e;&#x432;&#x430;&#x43d;&#x44b; &#x432; web steam!&#xa;&lt;/html&gt;"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Default Cursor"/>
@@ -616,7 +629,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/quest.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x421;&#x442;&#x430;&#x442;&#x443;&#x441; mobile"/>
+                    <Property name="text" type="java.lang.String" value="Status steam mobile"/>
                     <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#x421;&#x442;&#x430;&#x442;&#x443;&#x441;&#x44b;: &lt;br&gt;&#xa;&quot;logout&quot; - &#x432;&#x44b; &#x43d;&#x435; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x43e;&#x432;&#x430;&#x43d;&#x44b; &#x432; mobile steam!&lt;br&gt;&#xa;&quot;login&quot; - &#x432;&#x44b; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x43e;&#x432;&#x430;&#x43d;&#x44b; &#x432; mobile steam!&#xa;&lt;/html&gt;"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Default Cursor"/>
@@ -672,6 +685,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="twoFaCode" alignment="1" pref="202" max="32767" attributes="0"/>
                               <Component id="generate2faCode" alignment="1" max="32767" attributes="0"/>
+                              <Component id="allConfirm" alignment="1" max="32767" attributes="0"/>
+                              <Component id="steamAuth" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -684,7 +699,11 @@
                           <Component id="twoFaCode" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="generate2faCode" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="steamAuth" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="allConfirm" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -701,10 +720,26 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="generate2faCode">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x421;&#x433;&#x435;&#x43d;&#x435;&#x440;&#x438;&#x440;&#x43e;&#x432;&#x430;&#x442;&#x44c;"/>
+                    <Property name="text" type="java.lang.String" value="Generate"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generate2faCodeActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="allConfirm">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Confirm all"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allConfirmActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="steamAuth">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Steam login"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="steamAuthActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -746,7 +781,7 @@
                           <Component id="jPanel33" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="284" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="332" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1060,7 +1095,7 @@
                               <Component id="jLabel182" min="-2" max="-2" attributes="0"/>
                               <Component id="isLogOther" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="241" max="32767" attributes="0"/>
+                          <EmptySpace pref="289" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

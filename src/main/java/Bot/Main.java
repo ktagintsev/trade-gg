@@ -202,6 +202,7 @@ public class Main extends javax.swing.JFrame {
         jLabel100 = new javax.swing.JLabel();
         isAutoStart = new javax.swing.JCheckBox();
         login = new javax.swing.JButton();
+        login1 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         statusLabel = new javax.swing.JLabel();
@@ -213,6 +214,8 @@ public class Main extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         twoFaCode = new javax.swing.JTextField();
         generate2faCode = new javax.swing.JButton();
+        allConfirm = new javax.swing.JButton();
+        steamAuth = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         starTable = new javax.swing.JTable();
@@ -437,6 +440,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        login1.setText("Search");
+        login1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                login1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -455,6 +465,8 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(isAutoStart))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(login)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(login1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -472,7 +484,9 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(startROBT)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(login)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(login)
+                    .addComponent(login1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -480,7 +494,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
-        jLabel7.setText("Статус бот");
+        jLabel7.setText("Status ROBT");
         jLabel7.setToolTipText("<html>Статусы: <br>\n\"On!\" - все отлично, бот работает!<br>\n\"Off!\" - бот отключен.<br>\n\"Неверный email или пароль\" - проверьте правильность вашего email или пароля.<br>\n\"Купите лицензию!\" - нужно купить или продлить лицензию на сайте steam-market-Bot.ru в личном кабинете.\n</html>");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel7.setMaximumSize(new java.awt.Dimension(88, 23));
@@ -492,13 +506,13 @@ public class Main extends javax.swing.JFrame {
 
         jLabel72.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
-        jLabel72.setText("Статус web");
+        jLabel72.setText("Status steam web");
         jLabel72.setToolTipText("<html>Статусы: <br>\n\"logout\" - вы не авторизованы в web steam!<br>\n\"login\" - вы авторизованы в web steam!\n</html>");
         jLabel72.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel73.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
-        jLabel73.setText("Статус mobile");
+        jLabel73.setText("Status steam mobile");
         jLabel73.setToolTipText("<html>Статусы: <br>\n\"logout\" - вы не авторизованы в mobile steam!<br>\n\"login\" - вы авторизованы в mobile steam!\n</html>");
         jLabel73.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -538,7 +552,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel73)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(statusSteamMobile, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)))
+                        .addComponent(statusSteamMobile, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -567,10 +581,24 @@ public class Main extends javax.swing.JFrame {
         twoFaCode.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         twoFaCode.setText("ROBT GG");
 
-        generate2faCode.setText("Сгенерировать");
+        generate2faCode.setText("Generate");
         generate2faCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generate2faCodeActionPerformed(evt);
+            }
+        });
+
+        allConfirm.setText("Confirm all");
+        allConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allConfirmActionPerformed(evt);
+            }
+        });
+
+        steamAuth.setText("Steam login");
+        steamAuth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                steamAuthActionPerformed(evt);
             }
         });
 
@@ -582,7 +610,9 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(twoFaCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                    .addComponent(generate2faCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(generate2faCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(allConfirm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(steamAuth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -592,7 +622,11 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(twoFaCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(generate2faCode)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(steamAuth)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(allConfirm)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -747,7 +781,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
                     .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -888,7 +922,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel182, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(isLogOther))
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         cleanConsole.setText("Clear");
@@ -944,7 +978,7 @@ public class Main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1143,9 +1177,9 @@ public class Main extends javax.swing.JFrame {
                 WebDriver driver = new ChromeDriver();
                 try {
                     driver.get("https://tradeit.gg/");
-                    
-                    WebDriverWait wait = new WebDriverWait(driver, 20);                 
-                    login(driver, wait);                   
+
+                    WebDriverWait wait = new WebDriverWait(driver, 20);
+                    login(driver, wait);
                     search(driver, wait);
 
                     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea")));
@@ -1177,8 +1211,99 @@ public class Main extends javax.swing.JFrame {
         star.removeStarItems();
     }//GEN-LAST:event_removeStarItemsActionPerformed
 
+    private void allConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allConfirmActionPerformed
+        steamAuth.setEnabled(false);
+        allConfirm.setEnabled(false);
+        helperExecutor.execute(() -> {
+            Map<String, Object> params = getSteamParams();
+            try {
+                if (web == null) {
+                    web = new Steam(params);
+                }
+                if (mobile == null) {
+                    mobile = new Steam(params);
+                }
+                boolean result = false;
+                do {
+                    initSteam();
+                    result = confirmTrades("ALL");
+                } while (result);
+                JOptionPane.showMessageDialog(null, "Done!");
+                steamAuth.setEnabled(true);
+                allConfirm.setEnabled(true);
+            } catch (Exception ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                log(OTHER, ERROR, "all confirm button " + ex.getMessage());
+            }
+        });
+        JOptionPane.showMessageDialog(null, "Wait!");
+    }//GEN-LAST:event_allConfirmActionPerformed
+
+    private void steamAuthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_steamAuthActionPerformed
+        steamAuth.setEnabled(false);
+        allConfirm.setEnabled(false);
+        helperExecutor.execute(() -> {
+            Map<String, Object> params = getSteamParams();
+            try {
+                if (web == null) {
+                    web = new Steam(params);
+                }
+                if (mobile == null) {
+                    mobile = new Steam(params);
+                }
+                JOptionPane.showMessageDialog(null, "Done!");
+                steamAuth.setEnabled(true);
+                allConfirm.setEnabled(true);
+            } catch (Exception ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                log(OTHER, ERROR, "all confirm button " + ex.getMessage());
+            }
+        });
+        JOptionPane.showMessageDialog(null, "Wait!");
+    }//GEN-LAST:event_steamAuthActionPerformed
+
+    private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
+       helperExecutor.execute(() -> {
+            try {
+                String path = "";
+                if (isWindows()) {
+                    path = "./drivers/chromedriver.exe";
+                } else if (isMac()) {
+                    path = "./drivers/mac";
+                } else if (isUnix()) {
+                    path = "./drivers/linux64";
+                }
+                System.setProperty("webdriver.chrome.driver", path);
+                WebDriver driver = new ChromeDriver();
+                try {
+                    driver.get("https://tradeit.gg/");
+
+                    WebDriverWait wait = new WebDriverWait(driver, 20);
+                    search(driver, wait);
+
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea")));
+
+                    WebElement textarea = driver.findElement(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea"));
+                    textarea.sendKeys("Test");
+
+                    WebElement btn = driver.findElement(By.className("chat-form-buttons__button_send"));
+                    btn.click();
+
+                    driver.quit();
+                } catch (Exception ex) {
+                    driver.quit();
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    log(OTHER, ERROR, "send message " + ex.getMessage());
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                log(OTHER, ERROR, "send message " + ex.getMessage());
+            }
+        });
+    }//GEN-LAST:event_login1ActionPerformed
+
     private void login(WebDriver driver, WebDriverWait wait) throws Exception {
-        
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("steamlogin")));
 
         WebElement signin = driver.findElement(By.className("steamlogin"));
@@ -1204,17 +1329,22 @@ public class Main extends javax.swing.JFrame {
 
         twofactorcode_entry.submit();
     }
-    
+
     private void search(WebDriver driver, WebDriverWait wait) throws Exception {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssearch")));
-        WebElement search = driver.findElement(By.id("ssearch"));      
+        WebElement search = driver.findElement(By.id("ssearch"));
         List<String> names = star.getNames();
         for (String name : names) {
+            log(OTHER, INFO, "search " + name);
+            search.sendKeys("");
             search.sendKeys(name);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@data-original-title='" + name + "']")));
+            WebElement item = driver.findElement(By.xpath("//*[@data-original-title='" + name + "']"));
+            item.click();
             Thread.sleep(10000);
         }
     }
-    
+
     private void stop(String message) {
         startROBT.setText("Старт");
         statusLabel.setText(message);
@@ -1276,7 +1406,7 @@ public class Main extends javax.swing.JFrame {
         try {
             ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
             service.schedule(() -> {
-                if (isAutoStart.isSelected() && !"Работает!".equals(statusLabel.getText())) {
+                if (isAutoStart.isSelected() && !"On!".equals(statusLabel.getText())) {
                     startROBT.doClick();
                 }
             }, 5, TimeUnit.MINUTES);
@@ -1367,6 +1497,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addStarItem;
+    private javax.swing.JButton allConfirm;
     private javax.swing.JTextField botEmail;
     private javax.swing.JTextField botName;
     private javax.swing.JPasswordField botPassword;
@@ -1420,6 +1551,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loadSettings;
     private javax.swing.JButton login;
+    private javax.swing.JButton login1;
     private javax.swing.JMenuItem removeStarItem;
     private javax.swing.JMenuItem removeStarItems;
     private javax.swing.JPasswordField sharedSecret;
@@ -1432,6 +1564,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel statusSteamMobile;
     private javax.swing.JLabel statusSteamWeb;
     private javax.swing.JPasswordField steamApiKey;
+    private javax.swing.JButton steamAuth;
     private javax.swing.JTextField steamLogin;
     private javax.swing.JPasswordField steamPassword;
     private javax.swing.JTextField twoFaCode;
