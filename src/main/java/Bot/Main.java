@@ -244,7 +244,7 @@ public class Main extends javax.swing.JFrame {
 
         starPopupMenuSingle.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        removeStarItem.setText("Удалить");
+        removeStarItem.setText("Remove");
         removeStarItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeStarItemActionPerformed(evt);
@@ -254,7 +254,7 @@ public class Main extends javax.swing.JFrame {
 
         starPopupMenuSelected.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        removeStarItems.setText("Удалить из избранных выделенное");
+        removeStarItems.setText("Remove items");
         removeStarItems.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeStarItemsActionPerformed(evt);

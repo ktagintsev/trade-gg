@@ -38,17 +38,12 @@ import org.json.JSONObject;
  */
 public class StarTable extends Table {
 
-    public static int starClassidCol = 6;
-    public static int starInstanceidCol = 7;
-    public static int starServerCol = 8;
-
     public StarTable(JTable table, Main robt) {
         super(table, robt);
         super.nameColumn = 0;
 
         DefaultTableCellRenderer cellRenderer = new DefaultTableCellRenderer();
         cellRenderer.setHorizontalAlignment(JLabel.CENTER);
-        super.setCellRenderer(super.nameColumn, cellRenderer);
 
         List<RowSorter.SortKey> sortKeys = new ArrayList<>(5);
         sortKeys.add(new RowSorter.SortKey(this.nameColumn, SortOrder.ASCENDING));
@@ -63,10 +58,6 @@ public class StarTable extends Table {
         if (evt.isPopupTrigger() && this.table.getSelectedRows().length <= 1) {
             int row = this.table.rowAtPoint(evt.getPoint());
             this.table.setRowSelectionInterval(row, row);
-            row = this.table.convertRowIndexToModel(this.table.getSelectedRow());
-            long classid = (long) this.model.getValueAt(row, this.classidColumn);
-            long instanceid = (long) this.model.getValueAt(row, this.instanceidColumn);
-            String server = (String) this.model.getValueAt(row, this.serverColumn);
             this.robt.starPopupMenuSingle.show(evt.getComponent(), evt.getX(), evt.getY());
         }
         if (evt.isPopupTrigger() && this.table.getSelectedRows().length > 1) {
@@ -75,7 +66,7 @@ public class StarTable extends Table {
         int column = this.table.columnAtPoint(evt.getPoint());
         if (evt.getClickCount() == 2 && column == nameColumn) {
             int row = this.table.convertRowIndexToModel(this.table.getSelectedRow());
-            this.oldPrice = (double) this.model.getValueAt(row, this.nameColumn);
+            this.oldName = (String) this.model.getValueAt(row, this.nameColumn);
         }
     }
 
@@ -89,12 +80,12 @@ public class StarTable extends Table {
                     }
                     this.model.addRow(new Object[]{name});
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Ошибка создания! Проверьте ссылки на предметы!");
+                    JOptionPane.showMessageDialog(null, "Error Added! Send to support!");
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     return;
                 }
             }
-            JOptionPane.showMessageDialog(null, "Добавлено!");
+            JOptionPane.showMessageDialog(null, "Added!");
         }
     }
 
@@ -105,89 +96,31 @@ public class StarTable extends Table {
         } else {
             filter = "ktagintsev";
         }
-        this.rowSorter.setRowFilter(RowFilter.regexFilter("(?i)(" + filter + ")", this.gnameColumn));
+        this.rowSorter.setRowFilter(RowFilter.regexFilter("(?i)(" + filter + ")", this.nameColumn));
     }
 
     public void updateStarItem(TableModelEvent evt) {
         if (evt.getType() == 0) {
             int colume = evt.getColumn();
             int row = evt.getLastRow();
-            if (colume == this.maxPriceColumn) {
-                if (!this.isSetOldPrice) {
+            if (colume == this.nameColumn) {
+                if (!this.isSetOldName) {
                     try {
                         int selectedOption = JOptionPane.showConfirmDialog(null,
-                                "Обновить максимальную цену?",
-                                "Обновить",
+                                "Update name?",
+                                "Update",
                                 JOptionPane.YES_NO_OPTION);
                         if (selectedOption == JOptionPane.YES_OPTION) {
 
                         } else {
-                            this.isSetOldPrice = true;
-                            this.model.setValueAt(this.oldPrice, row, colume);
+                            this.isSetOldName = true;
+                            this.model.setValueAt(this.oldName, row, colume);
                         }
                     } catch (Exception ex) {
                         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    this.isSetOldPrice = false;
-                }
-            }
-            if (colume == this.countColumn) {
-                if (!this.isSetOldCount) {
-                    try {
-                        int selectedOption = JOptionPane.showConfirmDialog(null,
-                                "Обновить количество?",
-                                "Обновить",
-                                JOptionPane.YES_NO_OPTION);
-                        if (selectedOption == JOptionPane.YES_OPTION) {
-
-                        } else {
-                            this.isSetOldCount = true;
-                            this.model.setValueAt(this.oldCount, row, colume);
-                        }
-                    } catch (Exception ex) {
-                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    this.isSetOldCount = false;
-                }
-            }
-            if (colume == this.minPriceColumn) {
-                if (!this.isOldMinPrice) {
-                    try {
-                        int selectedOption = JOptionPane.showConfirmDialog(null,
-                                "Обновить минимальную цену?",
-                                "Обновить",
-                                JOptionPane.YES_NO_OPTION);
-                        if (selectedOption == JOptionPane.YES_OPTION) {
-
-                        } else {
-                            this.isOldMinPrice = true;
-                            this.model.setValueAt(this.oldMinPrice, row, colume);
-                        }
-                    } catch (Exception ex) {
-                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    this.isOldMinPrice = false;
-                }
-            }
-        }
-    }
-
-    public void removeAllStarItems() {
-        int selectedOption = JOptionPane.showConfirmDialog(null,
-                "Удалить вcе избранные предметы?",
-                "Удалить всё",
-                JOptionPane.YES_NO_OPTION);
-        if (selectedOption == JOptionPane.YES_OPTION) {
-            for (int i = 0; i < this.robt.games.size(); i++) {
-                Game game = this.robt.games.get(i);
-                if (!game.isEnabled()) {
-                    continue;
-                }
-                if (game.isLoadStar()) {
-                    super.removeAllItems(game);
+                    this.isSetOldName = false;
                 }
             }
         }
@@ -199,48 +132,17 @@ public class StarTable extends Table {
 
     public void removeStarItems() {
         int selectedOption = JOptionPane.showConfirmDialog(null,
-                "Удалить из избранных выделенное?",
-                "Удалить",
+                "Remove items?",
+                "Remove",
                 JOptionPane.YES_NO_OPTION);
         if (selectedOption == JOptionPane.YES_OPTION) {
             int[] starRows = this.table.getSelectedRows();
             for (int i = starRows.length - 1; i >= 0; i--) {
                 int row = this.table.convertRowIndexToModel(starRows[i]);
-                Item item = new Item();
-                item.classid = (long) this.model.getValueAt(row, this.classidColumn);
-                item.instanceid = (long) this.model.getValueAt(row, this.instanceidColumn);
-                String server = (String) this.model.getValueAt(row, this.serverColumn);
-                for (int j = 0; j < this.robt.games.size(); j++) {
-                    Game game = this.robt.games.get(j);
-                    if (!game.isEnabled()) {
-                        continue;
-                    }
-                    if (game.server.equals(server)) {
-                        this.model.removeRow(row);
-                    }
-                }
+                this.model.removeRow(row);
             }
+            JOptionPane.showMessageDialog(null, "Removed!");
         }
-    }
-
-    public JSONArray getStarItems(Game game) {
-        JSONArray items = new JSONArray();
-        for (int i = 0; i < this.model.getRowCount(); i++) {
-            try {
-                long classid = (long) this.model.getValueAt(i, this.classidColumn);
-                long instanceid = (long) this.model.getValueAt(i, this.instanceidColumn);
-                String server = (String) model.getValueAt(i, serverColumn);
-                if (server.equals(game.server)) {
-                    JSONObject obj = new JSONObject();
-                    obj.put("i_classid", classid);
-                    obj.put("i_instanceid", instanceid);
-                    items.put(obj);
-                }
-            } catch (Exception ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return items;
     }
 
     @Override
@@ -248,25 +150,9 @@ public class StarTable extends Table {
         JSONArray items = new JSONArray();
         for (int i = 0; i < this.model.getRowCount(); i++) {
             try {
-                String gname = (String) this.model.getValueAt(i, this.gnameColumn);
-                String iconUrl = (String) this.model.getValueAt(i, this.iconUrlColumn);
                 String name = (String) this.model.getValueAt(i, this.nameColumn);
-                double minPrice = (double) this.model.getValueAt(i, this.minPriceColumn);
-                double maxPrice = (double) this.model.getValueAt(i, this.maxPriceColumn);
-                int count = (int) this.model.getValueAt(i, this.countColumn);
-                long classid = (long) this.model.getValueAt(i, this.classidColumn);
-                long instanceid = (long) this.model.getValueAt(i, this.instanceidColumn);
-                String server = (String) model.getValueAt(i, this.serverColumn);
                 JSONObject obj = new JSONObject();
-                obj.put("gname", gname);
-                obj.put("iconUrl", iconUrl);
                 obj.put("name", name);
-                obj.put("minPrice", minPrice);
-                obj.put("maxPrice", maxPrice);
-                obj.put("count", count);
-                obj.put("classid", classid);
-                obj.put("instanceid", instanceid);
-                obj.put("server", server);
                 items.put(obj);
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -281,40 +167,13 @@ public class StarTable extends Table {
         try {
             JSONArray items = new JSONArray(content);
             int len = items.length();
-            CountDownLatch sync = new CountDownLatch(len);
-            int pool = 5;
-            ExecutorService executor = Executors.newFixedThreadPool(pool);
             for (int i = 0; i < items.length(); i++) {
                 JSONObject item = (JSONObject) items.get(i);
-                executor.execute(() -> {
-                    try {
-                        String url = item.getString("iconUrl");
-                        long classid = item.getLong("classid");
-                        long instanceid = item.getLong("instanceid");
-                        String server = item.getString("server");
-                        URL obj = new URL(url);
-                        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-                        con.setRequestMethod("GET");
-                        con.setRequestProperty("User-Agent", "Mozilla/5.0");
-                        ImageIcon icon = null;
-                        try {
-                            icon = new ImageIcon(new ImageIcon(ImageIO.read(con.getInputStream())).getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-                        } catch (Exception ex) {
-                            icon = new ImageIcon(new ImageIcon(getClass().getResource("/not_found.png")).getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-                        }
-                        if (!this.isInTable(this.model, classid, instanceid, server, this.classidColumn, this.instanceidColumn, this.serverColumn)) {
-                            rows.add(new Object[]{item.getString("gname"), icon, item.getString("name"), item.getDouble("minPrice"), item.getDouble("maxPrice"), item.getInt("count"), classid, instanceid, server, url});
-                        }
-                        sync.countDown();
-                    } catch (Exception ex) {
-                        sync.countDown();
-                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                });
+                String name = item.getString("name");
+                if (!this.isInTable(name)) {
+                    rows.add(new Object[]{item.getString("name")});
+                }
             }
-            int wait = len > pool ? (len / pool) + pool : pool;
-            sync.await(wait, TimeUnit.SECONDS);
-            executor.shutdownNow();
             if (len != rows.size()) {
                 this.loadItems(content);
             }

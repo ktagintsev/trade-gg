@@ -61,14 +61,10 @@ public class Table {
     public int typeColumn;
     public int dateColumn;
 
-    public int starClassidColumn = StarTable.starClassidCol;
-    public int starInstanceidColumn = StarTable.starInstanceidCol;
-    public int starServerColumn = StarTable.starServerCol;
-
     public TableRowSorter<TableModel> rowSorter;
 
-    public double oldPrice;
-    public boolean isSetOldPrice = false;
+    public String oldName;
+    public boolean isSetOldName = false;
 
     public int oldCount;
     public boolean isSetOldCount = false;
@@ -159,13 +155,13 @@ public class Table {
 
     public void removeSelectedItem() {
         int selectedOption = JOptionPane.showConfirmDialog(null,
-                "Удалить предмет?",
-                "Удалить",
+                "Remove item?",
+                "Remove",
                 JOptionPane.YES_NO_OPTION);
         if (selectedOption == JOptionPane.YES_OPTION) {
             int row = this.table.convertRowIndexToModel(this.table.getSelectedRow());
             model.removeRow(row);
-            JOptionPane.showMessageDialog(null, "Удалено!");
+            JOptionPane.showMessageDialog(null, "Removed!");
         }
     }
 
