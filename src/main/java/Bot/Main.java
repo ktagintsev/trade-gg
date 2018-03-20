@@ -195,6 +195,8 @@ public class Main extends javax.swing.JFrame {
         identitySecret = new javax.swing.JPasswordField();
         jLabel70 = new javax.swing.JLabel();
         deviceId = new javax.swing.JPasswordField();
+        jLabel71 = new javax.swing.JLabel();
+        steamTradeLink = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         loadSettings = new javax.swing.JButton();
         uploadSettings = new javax.swing.JButton();
@@ -327,6 +329,12 @@ public class Main extends javax.swing.JFrame {
 
         deviceId.setText("PASSWORD");
 
+        jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quest.png"))); // NOI18N
+        jLabel71.setText("Trade link:");
+        jLabel71.setToolTipText("<html>Steam API ключ, можно посмотреть тут: <br>\nhttp://steamcommunity.com/dev/apikey");
+
+        steamTradeLink.setText("PASSWORD");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -334,6 +342,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel70, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -344,7 +353,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(steamLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,7 +362,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(sharedSecret, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(identitySecret, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deviceId, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(steamTradeLink, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -385,6 +395,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(steamApiKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel71)
+                    .addComponent(steamTradeLink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel68)
                     .addComponent(sharedSecret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -395,7 +409,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
                     .addComponent(deviceId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Settings"));
@@ -433,7 +447,7 @@ public class Main extends javax.swing.JFrame {
         jLabel100.setMinimumSize(new java.awt.Dimension(156, 23));
         jLabel100.setPreferredSize(new java.awt.Dimension(156, 23));
 
-        login.setText("Login");
+        login.setText("Login and search");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -456,10 +470,6 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(startROBT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(loadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(uploadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel100, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(isAutoStart))
@@ -467,7 +477,11 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(login)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(login1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(loadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(uploadSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -477,7 +491,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(isAutoStart))
-                .addGap(95, 95, 95)
+                .addGap(92, 92, 92)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(loadSettings)
                     .addComponent(uploadSettings))
@@ -626,7 +640,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(steamAuth)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(allConfirm)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -781,7 +795,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
                     .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -922,7 +936,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel182, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(isLogOther))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
 
         cleanConsole.setText("Clear");
@@ -978,8 +992,8 @@ public class Main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -1180,15 +1194,8 @@ public class Main extends javax.swing.JFrame {
 
                     WebDriverWait wait = new WebDriverWait(driver, 20);
                     login(driver, wait);
-                    search(driver, wait);
-
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea")));
-
-                    WebElement textarea = driver.findElement(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea"));
-                    textarea.sendKeys("Test");
-
-                    WebElement btn = driver.findElement(By.className("chat-form-buttons__button_send"));
-                    btn.click();
+                    saveTradeLink(wait);
+                    search(driver);
 
                     driver.quit();
                 } catch (Exception ex) {
@@ -1263,7 +1270,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_steamAuthActionPerformed
 
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
-       helperExecutor.execute(() -> {
+        helperExecutor.execute(() -> {
             try {
                 String path = "";
                 if (isWindows()) {
@@ -1278,16 +1285,7 @@ public class Main extends javax.swing.JFrame {
                 try {
                     driver.get("https://tradeit.gg/");
 
-                    WebDriverWait wait = new WebDriverWait(driver, 20);
-                    search(driver, wait);
-
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea")));
-
-                    WebElement textarea = driver.findElement(By.xpath(".//*[@class=\"chat-form__textarea\"]/textarea"));
-                    textarea.sendKeys("Test");
-
-                    WebElement btn = driver.findElement(By.className("chat-form-buttons__button_send"));
-                    btn.click();
+                    search(driver);
 
                     driver.quit();
                 } catch (Exception ex) {
@@ -1329,19 +1327,61 @@ public class Main extends javax.swing.JFrame {
 
         twofactorcode_entry.submit();
     }
+    
+    private void saveTradeLink(WebDriverWait wait) throws Exception {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("username")));
+        username.click();
+        WebElement modal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(@onclick, 'tradeurlmodal')]")));
+        modal.click();
+        WebElement tradeurl = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tradeurl")));
+        tradeurl.sendKeys(new String(steamTradeLink.getPassword()));
+        WebElement tradeurlsave = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tradeurlsave")));
+        tradeurlsave.click();
+    }
 
-    private void search(WebDriver driver, WebDriverWait wait) throws Exception {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssearch")));
-        WebElement search = driver.findElement(By.id("ssearch"));
+    private void search(WebDriver driver) throws Exception {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssearch")));
         List<String> names = star.getNames();
         for (String name : names) {
             log(OTHER, INFO, "search " + name);
-            search.sendKeys("");
+            search.clear();
             search.sendKeys(name);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@data-original-title='" + name + "']")));
-            WebElement item = driver.findElement(By.xpath("//*[@data-original-title='" + name + "']"));
+            if (isFoundName(wait, name) && isTradeClick(wait)) {
+                Thread.sleep(15000);
+                /*boolean result = false;
+                do {
+                    initSteam();
+                    result = confirmTrades("ALL");
+                } while (result);*/
+            }            
+        }
+    }
+
+    private boolean isFoundName(WebDriverWait wait, String name) {
+        try {
+            WebElement item = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@data-original-title='" + name + "']")));
             item.click();
-            Thread.sleep(10000);
+            return true;
+        } catch (Exception e) {
+            log(OTHER, ERROR, "isFoundName " + name);
+            return false;
+        }
+    }
+    
+    private boolean isTradeClick(WebDriverWait wait) {
+        try {
+            WebElement trade = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("trade")));
+            if(trade.isEnabled()){
+                trade.click();
+                return true;
+            } else {
+                log(OTHER, INFO, "isTradeClick false");
+                return false;
+            }    
+        } catch (Exception e) {
+            log(OTHER, ERROR, "isTradeClick false");
+            return false;
         }
     }
 
@@ -1533,6 +1573,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JPanel jPanel11;
@@ -1567,6 +1608,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton steamAuth;
     private javax.swing.JTextField steamLogin;
     private javax.swing.JPasswordField steamPassword;
+    private javax.swing.JPasswordField steamTradeLink;
     private javax.swing.JTextField twoFaCode;
     private javax.swing.JButton uploadSettings;
     // End of variables declaration//GEN-END:variables

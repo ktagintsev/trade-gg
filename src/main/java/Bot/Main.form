@@ -85,8 +85,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" pref="545" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -138,7 +138,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel2" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel9" max="32767" attributes="0"/>
@@ -166,6 +166,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel71" max="32767" attributes="0"/>
                               <Component id="jLabel70" max="32767" attributes="0"/>
                               <Component id="jLabel69" pref="100" max="32767" attributes="0"/>
                               <Component id="jLabel68" max="32767" attributes="0"/>
@@ -177,7 +178,7 @@
                               <Component id="jLabel20" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="botEmail" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="botPassword" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="steamLogin" min="-2" pref="80" max="-2" attributes="0"/>
@@ -187,6 +188,7 @@
                               <Component id="identitySecret" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="deviceId" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="botName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="steamTradeLink" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -227,6 +229,11 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="steamTradeLink" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel68" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="sharedSecret" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -240,7 +247,7 @@
                               <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="deviceId" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -371,6 +378,20 @@
                     <Property name="text" type="java.lang.String" value="PASSWORD"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel71">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/quest.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Trade link:"/>
+                    <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;Steam API &#x43a;&#x43b;&#x44e;&#x447;, &#x43c;&#x43e;&#x436;&#x43d;&#x43e; &#x43f;&#x43e;&#x441;&#x43c;&#x43e;&#x442;&#x440;&#x435;&#x442;&#x44c; &#x442;&#x443;&#x442;: &lt;br&gt;&#xa;http://steamcommunity.com/dev/apikey"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JPasswordField" name="steamTradeLink">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="PASSWORD"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel2">
@@ -390,20 +411,20 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="startROBT" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="loadSettings" min="-2" pref="108" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="uploadSettings" min="-2" pref="100" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel100" pref="168" max="32767" attributes="0"/>
                                   <EmptySpace pref="59" max="32767" attributes="0"/>
                                   <Component id="isAutoStart" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="login" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="login1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="loadSettings" min="-2" pref="96" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="uploadSettings" min="-2" pref="92" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -418,7 +439,7 @@
                               <Component id="jLabel100" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="isAutoStart" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="loadSettings" min="-2" max="-2" attributes="0"/>
                               <Component id="uploadSettings" min="-2" max="-2" attributes="0"/>
@@ -497,7 +518,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="login">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Login"/>
+                    <Property name="text" type="java.lang.String" value="Login and search"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
@@ -703,7 +724,7 @@
                           <Component id="steamAuth" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="allConfirm" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="24" max="32767" attributes="0"/>
+                          <EmptySpace pref="99" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -781,7 +802,7 @@
                           <Component id="jPanel33" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="332" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="419" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1095,7 +1116,7 @@
                               <Component id="jLabel182" min="-2" max="-2" attributes="0"/>
                               <Component id="isLogOther" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="289" max="32767" attributes="0"/>
+                          <EmptySpace pref="376" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
