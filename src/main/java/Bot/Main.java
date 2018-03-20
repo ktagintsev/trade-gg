@@ -242,8 +242,6 @@ public class Main extends javax.swing.JFrame {
         isLogError = new javax.swing.JCheckBox();
         cleanConsole = new javax.swing.JButton();
 
-        starPopupMenuSingle.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
         removeStarItem.setText("Remove");
         removeStarItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,8 +249,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
         starPopupMenuSingle.add(removeStarItem);
-
-        starPopupMenuSelected.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         removeStarItems.setText("Remove items");
         removeStarItems.addActionListener(new java.awt.event.ActionListener() {
@@ -1036,14 +1032,6 @@ public class Main extends javax.swing.JFrame {
         return result;
     }
 
-    private void removeStarItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStarItemsActionPerformed
-        star.removeStarItems();
-    }//GEN-LAST:event_removeStarItemsActionPerformed
-
-    private void removeStarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStarItemActionPerformed
-        star.removeSelectedItem();
-    }//GEN-LAST:event_removeStarItemActionPerformed
-
     private void cleanConsoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanConsoleActionPerformed
         consoleArea.setText("");
     }//GEN-LAST:event_cleanConsoleActionPerformed
@@ -1203,6 +1191,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_loginActionPerformed
+
+    private void removeStarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStarItemActionPerformed
+        star.removeSelectedItem();
+    }//GEN-LAST:event_removeStarItemActionPerformed
+
+    private void removeStarItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStarItemsActionPerformed
+        star.removeStarItems();
+    }//GEN-LAST:event_removeStarItemsActionPerformed
 
     private void stop(String message) {
         startROBT.setText("Старт");
@@ -1409,8 +1405,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loadSettings;
     private javax.swing.JButton login;
-    public javax.swing.JMenuItem removeStarItem;
-    public javax.swing.JMenuItem removeStarItems;
+    private javax.swing.JMenuItem removeStarItem;
+    private javax.swing.JMenuItem removeStarItems;
     private javax.swing.JPasswordField sharedSecret;
     public javax.swing.JPopupMenu starPopupMenuSelected;
     public javax.swing.JPopupMenu starPopupMenuSingle;
