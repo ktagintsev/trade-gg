@@ -1135,6 +1135,8 @@ public class Main extends javax.swing.JFrame {
                         }
                     });
                     start();
+                    statusROBTLabel.setText("On!");
+                    statusROBTLabel.setForeground(Color.green);
                 } else {
                     stopWithoutInc(message);
                 }
