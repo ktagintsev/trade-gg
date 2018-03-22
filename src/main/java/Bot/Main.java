@@ -1192,16 +1192,18 @@ public class Main extends javax.swing.JFrame {
             } else if (isUnix()) {
                 path = "./drivers/linux64";
             }
+            log(OTHER, INFO, "send message " + path);
             System.setProperty("webdriver.chrome.driver", path);
+            log(OTHER, INFO, "setProperty");
             WebDriver driver = new ChromeDriver();
             try {
                 driver.get("https://tradeit.gg/");
+                log(OTHER, INFO, "driver.get");
                 driver.manage().window().setSize(new Dimension(1280, 1024));
                 WebDriverWait wait = new WebDriverWait(driver, 20);
                 login(driver, wait);
                 saveTradeLink(wait);
                 search(driver);
-
                 driver.quit();
             } catch (Exception ex) {
                 driver.quit();
@@ -1210,7 +1212,7 @@ public class Main extends javax.swing.JFrame {
             }
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "send message " + ex.getMessage());
+            log(OTHER, ERROR, "driver " + ex.getMessage());
         }
     }
 

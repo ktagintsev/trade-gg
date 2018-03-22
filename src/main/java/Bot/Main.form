@@ -955,13 +955,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel182" pref="120" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabel183" pref="120" max="32767" attributes="0"/>
-                                  <Component id="jLabel186" max="32767" attributes="0"/>
-                                  <Component id="jLabel185" max="32767" attributes="0"/>
-                                  <Component id="jLabel178" max="32767" attributes="0"/>
-                                  <Component id="jLabel179" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel183" alignment="1" pref="120" max="32767" attributes="0"/>
+                              <Component id="jLabel186" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLabel185" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLabel178" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLabel179" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
