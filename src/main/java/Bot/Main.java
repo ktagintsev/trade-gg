@@ -20,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import static java.lang.Thread.sleep;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -125,7 +126,7 @@ public class Main extends javax.swing.JFrame {
             @Override
             protected int calculateTabWidth(
                     int tabPlacement, int tabIndex, FontMetrics metrics) {
-                return 147; // the width of the tab
+                return 180; // the width of the tab
             }
         });
 
@@ -1072,6 +1073,7 @@ public class Main extends javax.swing.JFrame {
                         try {
                             initSteam();
                             loginAndSearch();
+                            stop("Off!");
                         } catch (Exception ex) {
                             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                             log(OTHER, ERROR, "initSteam " + ex.getMessage());
@@ -1235,8 +1237,15 @@ public class Main extends javax.swing.JFrame {
         WebElement twofactorcode_entry = driver.findElement(By.id("twofactorcode_entry"));
         Steam steam = new Steam(getSteamParams());
         steam.getSteamGuard().generateSteamGuardCode();
-        twofactorcode_entry.sendKeys(steam.getSteamGuard().generateSteamGuardCode());
-
+        
+        String code = steam.getSteamGuard().generateSteamGuardCode();
+        String twoFactorCode = code;
+        while (twoFactorCode.equals(code)) {
+            sleep(1000);
+            System.out.println("Generate fa code!");
+            code = steam.getSteamGuard().generateSteamGuardCode();
+        }
+        twofactorcode_entry.sendKeys(code);
         twofactorcode_entry.submit();
     }
 
@@ -1264,7 +1273,7 @@ public class Main extends javax.swing.JFrame {
                     new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='trade-confirmed']//p[@class='trade-success']")));
                     initSteam();
                     confirmTrades("ALL");
-                    WebElement close = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("close")));
+                    WebElement close = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='tradedmodal']//button")));
                     close.click();
                 } catch (Exception ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
