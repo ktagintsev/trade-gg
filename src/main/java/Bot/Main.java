@@ -131,7 +131,7 @@ public class Main extends javax.swing.JFrame {
 
         loadSettings(true);
         statusROBTLabel.setForeground(Color.red);
-        
+
         Game csgo = new Game();
         csgo.name = "CSGO";
 
@@ -1076,7 +1076,7 @@ public class Main extends javax.swing.JFrame {
                             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                             log(OTHER, ERROR, "initSteam " + ex.getMessage());
                         }
-                    });                   
+                    });
                 } else {
                     stopWithoutInc(message);
                 }
@@ -1211,7 +1211,7 @@ public class Main extends javax.swing.JFrame {
             log(OTHER, ERROR, "send message " + ex.getMessage());
         }
     }
-    
+
     private void login(WebDriver driver, WebDriverWait wait) throws Exception {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("steamlogin")));
@@ -1252,11 +1252,11 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void search(WebDriver driver) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssearch")));
+        WebDriverWait wait = new WebDriverWait(driver, 5);        
         List<String> names = star.getNames();
         for (String name : names) {
             log(OTHER, INFO, "search " + name);
+            WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssearch")));
             search.clear();
             search.sendKeys(name);
             if (isFoundName(wait, name) && isTradeClick(wait)) {
@@ -1264,6 +1264,8 @@ public class Main extends javax.swing.JFrame {
                     new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='trade-confirmed']//p[@class='trade-success']")));
                     initSteam();
                     confirmTrades("ALL");
+                    WebElement close = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("close")));
+                    close.click();
                 } catch (Exception ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
