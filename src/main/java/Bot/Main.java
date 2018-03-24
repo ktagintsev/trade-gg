@@ -945,7 +945,8 @@ public class Main extends javax.swing.JFrame {
                 JSONObject testPing = new JSONObject(test);
                 boolean success = testPing.getBoolean("success");
                 if (success) {
-
+                    statusROBTLabel.setText("On!");
+                    statusROBTLabel.setForeground(Color.green);
                 } else {
                     stop(testPing.getString("message"));
                 }
@@ -1067,8 +1068,6 @@ public class Main extends javax.swing.JFrame {
                     web = new Steam(params);
                     mobile = new Steam(params);
                     start();
-                    statusROBTLabel.setText("On!");
-                    statusROBTLabel.setForeground(Color.green);
                     helperExecutor.execute(() -> {
                         try {
                             initSteam();
@@ -1239,7 +1238,7 @@ public class Main extends javax.swing.JFrame {
         WebElement twofactorcode_entry = driver.findElement(By.id("twofactorcode_entry"));
         Steam steam = new Steam(getSteamParams());
         steam.getSteamGuard().generateSteamGuardCode();
-        
+
         String code = steam.getSteamGuard().generateSteamGuardCode();
         String twoFactorCode = code;
         while (twoFactorCode.equals(code)) {
@@ -1263,7 +1262,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void search(WebDriver driver) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 5);        
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         List<String> names = star.getNames();
         for (String name : names) {
             log(OTHER, INFO, "search " + name);
