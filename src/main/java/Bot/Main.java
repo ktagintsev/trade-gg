@@ -933,7 +933,7 @@ public class Main extends javax.swing.JFrame {
             shutdown();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "window closeing");
+            log(ERROR, "window closeing");
         }
     }//GEN-LAST:event_formWindowClosing
 
@@ -969,7 +969,7 @@ public class Main extends javax.swing.JFrame {
             mobile.setSession(true, updateAuthInterval);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "init steam");
+            log(ERROR, "init steam");
         }
     }
 
@@ -986,12 +986,12 @@ public class Main extends javax.swing.JFrame {
                     tradeOffer.getInfo();
                     System.out.println("ACCEPT:");
                     result = tradeOffers.acceptTrade(tradeOffer);
-                    log(GET_GIVE, INFO, "accept trade " + tradeOffer.getTradeofferid() + ", secret " + secret);
+                    log(INFO, "accept trade " + tradeOffer.getTradeofferid() + ", secret " + secret);
                 }
             }
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(GET_GIVE, ERROR, "confirm trades " + ex.getMessage());
+            log(ERROR, "confirm trades " + ex.getMessage());
         }
         try {
             List<Confirmation> confirmations = mobile.getConfirmations().fetchConfirmations();
@@ -1003,7 +1003,7 @@ public class Main extends javax.swing.JFrame {
         } catch (Exception ex) {
             mobile.refreshMobileSession();
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(GET_GIVE, ERROR, "confirm trades " + ex.getMessage());
+            log(ERROR, "confirm trades " + ex.getMessage());
         }
         return result;
     }
@@ -1018,7 +1018,7 @@ public class Main extends javax.swing.JFrame {
             twoFaCode.setText(steam.getSteamGuard().generateSteamGuardCode());
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "generate 2fa code " + ex.getMessage());
+            log(ERROR, "generate 2fa code " + ex.getMessage());
         }
     }//GEN-LAST:event_generate2faCodeActionPerformed
 
@@ -1036,7 +1036,7 @@ public class Main extends javax.swing.JFrame {
                 runtime.exec("xdg-open " + "https://webdivision.pro/");
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, ex.getMessage());
+                log(ERROR, ex.getMessage());
             }
         }
     }//GEN-LAST:event_jLabel23MouseClicked
@@ -1048,7 +1048,7 @@ public class Main extends javax.swing.JFrame {
             System.out.println(ANSI_RED + "stopScheduledExecutor: " + ex.getMessage());
         }
         if ("Start".equals(startROBT.getText())) {
-            log(OTHER, INFO, "start");
+            log(INFO, "start");
             startROBT.setText("Stop");
             Map<String, Object> params = getSteamParams();
             EMAIL = botEmail.getText();
@@ -1075,7 +1075,7 @@ public class Main extends javax.swing.JFrame {
                             stop("Off!");
                         } catch (Exception ex) {
                             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                            log(OTHER, ERROR, "initSteam " + ex.getMessage());
+                            log(ERROR, "initSteam " + ex.getMessage());
                         }
                     });
                 } else {
@@ -1083,7 +1083,7 @@ public class Main extends javax.swing.JFrame {
                 }
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, "start");
+                log(ERROR, "start");
                 stopWithoutInc(message);
             }
         } else {
@@ -1147,7 +1147,7 @@ public class Main extends javax.swing.JFrame {
                 allConfirm.setEnabled(true);
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, "all confirm button " + ex.getMessage());
+                log(ERROR, "all confirm button " + ex.getMessage());
             }
         });
         JOptionPane.showMessageDialog(null, "Wait!");
@@ -1175,7 +1175,7 @@ public class Main extends javax.swing.JFrame {
                 allConfirm.setEnabled(true);
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, "all confirm button " + ex.getMessage());
+                log(ERROR, "all confirm button " + ex.getMessage());
             }
         });
         JOptionPane.showMessageDialog(null, "Wait!");
@@ -1191,13 +1191,13 @@ public class Main extends javax.swing.JFrame {
             } else if (isUnix()) {
                 path = "./drivers/linux64";
             }
-            log(OTHER, INFO, "send message " + path);
+            log(INFO, "send message " + path);
             System.setProperty("webdriver.chrome.driver", path);
-            log(OTHER, INFO, "setProperty");
+            log(INFO, "setProperty");
             WebDriver driver = new ChromeDriver();
             try {
                 driver.get("https://tradeit.gg/");
-                log(OTHER, INFO, "driver.get");
+                log(INFO, "driver.get");
                 driver.manage().window().setSize(new Dimension(1280, 1024));
                 WebDriverWait wait = new WebDriverWait(driver, 20);
                 login(driver, wait);
@@ -1207,11 +1207,11 @@ public class Main extends javax.swing.JFrame {
             } catch (Exception ex) {
                 driver.quit();
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, "send message " + ex.getMessage());
+                log(ERROR, "send message " + ex.getMessage());
             }
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "driver " + ex.getMessage());
+            log(ERROR, "driver " + ex.getMessage());
         }
     }
 
@@ -1265,7 +1265,7 @@ public class Main extends javax.swing.JFrame {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         List<String> names = star.getNames();
         for (String name : names) {
-            log(OTHER, INFO, "search " + name);
+            log(INFO, "search " + name);
             WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssearch")));
             search.clear();
             search.sendKeys(name);
@@ -1290,7 +1290,7 @@ public class Main extends javax.swing.JFrame {
             item.click();
             return true;
         } catch (Exception e) {
-            log(OTHER, ERROR, "isFoundName " + name);
+            log(ERROR, "isFoundName " + name);
             return false;
         }
     }
@@ -1300,7 +1300,7 @@ public class Main extends javax.swing.JFrame {
             WebElement item = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='sinv-loader']//*[@data-original-title='" + name + "' and @data-bot='-1']")));
             item.click();
         } catch (Exception e) {
-            log(OTHER, ERROR, "openStack " + name);
+            log(ERROR, "openStack " + name);
         }
     }
 
@@ -1311,11 +1311,11 @@ public class Main extends javax.swing.JFrame {
                 trade.click();
                 return true;
             } else {
-                log(OTHER, INFO, "isTradeClick false");
+                log(INFO, "isTradeClick false");
                 return false;
             }
         } catch (Exception e) {
-            log(OTHER, ERROR, "isTradeClick false");
+            log(ERROR, "isTradeClick false");
             return false;
         }
     }
@@ -1330,7 +1330,7 @@ public class Main extends javax.swing.JFrame {
             http.sendGet("https://robt.pro/ggtest?test=" + PASSWORD + "&action=stop" + "&pong=" + EMAIL);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "stop");
+            log(ERROR, "stop");
         }
         restartApplication();
     }
@@ -1374,7 +1374,7 @@ public class Main extends javax.swing.JFrame {
             builder.start();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "restart app " + ex.getMessage());
+            log(ERROR, "restart app " + ex.getMessage());
         }
         System.exit(0);
     }
@@ -1386,7 +1386,7 @@ public class Main extends javax.swing.JFrame {
 
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "send mail");
+            log(ERROR, "send mail");
         }
     }
 
@@ -1544,7 +1544,7 @@ public class Main extends javax.swing.JFrame {
                     Date date = new Date();
                     filePath = f.getSelectedFile().toString() + System.getProperty("file.separator") + "settings_" + format.format(date) + ".txt";
                 } catch (Exception ex) {
-                    log(OTHER, ERROR, "upload settings " + ex.getMessage());
+                    log(ERROR, "upload settings " + ex.getMessage());
                 }
             }
             FileOutputStream fop = null;
@@ -1589,7 +1589,7 @@ public class Main extends javax.swing.JFrame {
 
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                log(OTHER, ERROR, "upload settings IOException " + ex.getMessage());
+                log(ERROR, "upload settings IOException " + ex.getMessage());
             } finally {
                 try {
                     if (fop != null) {
@@ -1597,12 +1597,12 @@ public class Main extends javax.swing.JFrame {
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    log(OTHER, ERROR, "upload settings IOException " + ex.getMessage());
+                    log(ERROR, "upload settings IOException " + ex.getMessage());
                 }
             }
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            log(OTHER, ERROR, "upload settings " + ex.getMessage());
+            log(ERROR, "upload settings " + ex.getMessage());
         }
     }
 
@@ -1628,7 +1628,7 @@ public class Main extends javax.swing.JFrame {
                     try {
                         content = setting[1];
                     } catch (Exception ex) {
-                        log(OTHER, ERROR, "load settings content[1] not found " + ex.getMessage());
+                        log(ERROR, "load settings content[1] not found " + ex.getMessage());
                     }
                     if ("botName".equals(setting[0])) {
                         botName.setText(content);
@@ -1692,7 +1692,7 @@ public class Main extends javax.swing.JFrame {
                 }
 
             } catch (IOException ex) {
-                log(OTHER, ERROR, "load settings IOException " + ex.getMessage());
+                log(ERROR, "load settings IOException " + ex.getMessage());
             } finally {
                 try {
                     if (fis != null) {
@@ -1702,29 +1702,29 @@ public class Main extends javax.swing.JFrame {
                         file.delete();
                     }
                 } catch (IOException ex) {
-                    log(OTHER, ERROR, "load settings IOException " + ex.getMessage());
+                    log(ERROR, "load settings IOException " + ex.getMessage());
                 }
             }
         } catch (Exception ex) {
-            log(OTHER, ERROR, "load settings " + ex.getMessage());
+            log(ERROR, "load settings " + ex.getMessage());
         }
     }
 
-    private void log(String location, String type, String text) {
+    private void log(String location, String text) {
         if (location.equals(GET_GIVE) && isLogGetOrGive.isSelected()) {
-            saveLog(location, type, text);
+            saveLog(location, text);
         }
         if (location.equals(OTHER) && isLogOther.isSelected()) {
-            saveLog(location, type, text);
+            saveLog(location, text);
         }
     }
 
-    private void saveLog(String location, String type, String text) {
-        String log = dateFormat.format(new Date()) + " => " + location + " " + type + ": " + text + "\n";
-        if (isLogSaveToFile.isSelected() && (isLogInfo.isSelected() && type.equals(INFO) || isLogError.isSelected() && type.equals(ERROR))) {
+    private void saveLog(String location, String text) {
+        String log = dateFormat.format(new Date()) + " => " + location + ": " + text + "\n";
+        if (isLogSaveToFile.isSelected() && (isLogInfo.isSelected() || isLogError.isSelected())) {
             saveLogToFile(log);
         }
-        if (isLogWriteToConsole.isSelected() && (isLogInfo.isSelected() && type.equals(INFO) || isLogError.isSelected() && type.equals(ERROR))) {
+        if (isLogWriteToConsole.isSelected() && (isLogInfo.isSelected() || isLogError.isSelected())) {
             saveLogToConsole(log);
         }
     }
